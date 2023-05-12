@@ -425,3 +425,7 @@ input[type]:focus{
 }
 
 
+.strokeheading {
+  -webkit-text-stroke: 1px #16e2a5;
+  -webkit-text-fill-color: white;
+}
