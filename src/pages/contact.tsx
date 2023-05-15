@@ -4,6 +4,7 @@ import CopyRightBar from "~/components/CopyRightBar";
 import Footer from "~/components/Footer";
 import Header from "~/components/Header/Header";
 import ContactSlider from "~/components/Slider/ContactSlider";
+import ThumbsSlider from "~/components/Slider/ThumbsSlider";
 
 const contact = () => {
   return (
@@ -12,7 +13,8 @@ const contact = () => {
       <section className="pt-[130px]">
         <div className="contact-page flex flex-col items-center justify-center md:flex-row">
           <div className="contact-slider w-full md:w-[50%] bg-darkblue">
-              <ContactSlider />
+              {/* <ContactSlider /> */}
+              <ThumbsSlider />
           </div>
 
           <div className="contact w-full px-[20px] py-[50px] md:w-[50%]">

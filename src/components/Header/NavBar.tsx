@@ -13,7 +13,7 @@ const NavBar: FC = () => {
 
 
     <NavigationMenu.Root className='menu-wrapper bg-transparent flex items-center justify-between px-3 text-white h-20 border-b'>
-      <div className="logo h-full flex items-center w-[200px] lg:w-auto">
+      <div className="logo h-full flex items-center w-[150px] sm:w-[200px] lg:w-auto">
         <Link href={"/"}>
           <img src="/logo-trans.png" alt="Ecommerce Inside Logo" />
         </Link>

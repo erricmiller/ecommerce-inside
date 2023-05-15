@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens:{
+        xs: '370',
+      },
       fontSize: {
         xs:'12px',
         sm: '14px',

@@ -40,7 +40,7 @@ const InfoSec:FC<InfoSecProps> = ({smallHeading,mainHeading,desc,infocardData}) 
             ))}
           </div>
 
-          <div className="about-btn  flex justify-center gap-8">
+          <div className="about-btn  flex flex-col sm:flex-row items-center justify-center gap-8">
             <Button variant="Dark" className="">
               Let's Get Started
             </Button>

@@ -37,7 +37,7 @@ const Home: NextPage = () => {
       <main className="overflow-hidden">
         <Header />
         <HeroSlider />
-        <section className="bg-white flex flex-col items-center justify-center py-16 px-[65px]">
+        <section className="bg-white flex flex-col items-center justify-center py-16 px-[15px] sm:px-[65px]">
           <img src="/tg-icon.jpg" alt="" className=" rounded-full border-[5px] border-caribbeangreen animate-grow-shrink" />
           <div className="flex flex-col items-center mt-6 mb-[25px]">
             <h2 className="text-black text-h2 animate-fade-in-up text-center lg:text-left">The Best Digital Marketing Company in UAE</h2>
@@ -51,22 +51,25 @@ const Home: NextPage = () => {
         </section>
 
         
-        <section className="bg-white flex flex-col items-center justify-center py-16 px-[65px] w-[75%] mx-auto">
+        <section className="bg-white flex flex-col items-center justify-center py-16 px-[15px] sm:px-[65px] w-[75%] mx-auto">
           <h2 className="text-black text-h2 font-bold  animate-fade-in-up text-center lg:text-left">Ecommerce Inside Plans & Pricing</h2>
           <h4 className="text-gray-500 text-h4 animate-fade-in-up text-center lg:text-left">Affordable Price Packages</h4>
           <ServicePackages />
         </section>
         {/* <Packages /> */}
 
-        <section className=" bg-white  py-16 px-[65px] border-y border-[#ccc]">
+        <section className=" bg-white  py-16 px-[15px] smpx-[65px] border-y border-[#ccc]">
           <ProjectSlider />
         </section>
 
 
         <section className=" bg-white flex flex-col items-center justify-center py-16 ">
+          <div className="px-[15px]">
+
           <h2 className="text-h2 text-center text-gray-500">Upscale and Leverage Brand Growth </h2>
           <h2 className="text-h2 text-center font-extrabold text-black">With the Digital Marketing Company in USA </h2>
           <p className="text-p text-center text-gray-700 text-center mb-[40px]">Allow us to take your brand to new heights with the ultra modern marketing strategies and improve your brand’s digital visibility. Our professionals with decades of experience and marketing expertise can change the game in a snap. </p>
+          </div>
           <div className=" xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 md:grid ">
             <div className={`bg-caribbeangreen bg-center  px-9 flex flex-col h-[385px]  justify-center border `}>
               <div className=' group-hover:hidden flex flex-col'>

@@ -102,18 +102,12 @@ button.btn {
   }
    */
 
-
-
-
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --carribeanGreen: #00E2A1;
+  --carribeanGreen: #00e2a1;
   --white: #fff;
   --darkBlue: #201949;
   --gray: #ebeaea;
@@ -141,11 +135,10 @@ button.btn {
   border: 3px solid var(--gray);
 }
 
-
 button.btn {
   text-decoration: none;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   display: block;
   overflow: hidden;
@@ -181,7 +174,7 @@ button.Dark {
 button.btn::before,
 button.btn::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   background: var(--carribeanGreen);
@@ -193,7 +186,7 @@ button.btn::after {
 button.White::before,
 button.White::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   background: var(--white);
@@ -205,7 +198,7 @@ button.White::after {
 button.Dark::before,
 button.Dark::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   background: var(--darkBlue);
@@ -242,12 +235,12 @@ button.btn::after {
 }
 
 button.btn:hover::before {
-  animation: move-left .8s both;
+  animation: move-left 0.8s both;
   animation-direction: alternate;
 }
 
 button.btn:hover::after {
-  animation: move-right .8s both;
+  animation: move-right 0.8s both;
   animation-direction: alternate;
 }
 
@@ -287,14 +280,8 @@ button.btn:hover::after {
   }
 }
 
-
-
-
-
-
-
 /* Slider */
-.each-slide-effect>div {
+.each-slide-effect > div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -309,15 +296,12 @@ button.btn:hover::after {
   text-align: center;
 }
 
-
 .listTickColor {
   color: #16e2a5;
 }
 
-
-
-
-element.style {}
+element.style {
+}
 
 @media (min-width: 1200px) {
   .container {
@@ -325,7 +309,7 @@ element.style {}
   }
 }
 
-@media (min-width: 992px) and (max-width: 1140px){
+@media (min-width: 992px) and (max-width: 1140px) {
   .container {
     max-width: 960px;
   }
@@ -335,13 +319,16 @@ element.style {}
     max-width: 720px;
   }
 }
-@media (min-width: 576px)  and (max-width: 768px){
+@media (min-width: 576px) and (max-width: 768px) {
   .container {
     max-width: 540px;
   }
 }
-
-
+@media (min-width: 369px) and (max-width: 576px) {
+  .container {
+    max-width: 350px;
+  }
+}
 
 .form-group {
   border: 2px solid #fff;
@@ -350,17 +337,17 @@ element.style {}
   padding: 8px;
 }
 
-.form-group>label {
+.form-group > label {
   position: absolute;
   top: -18px;
   left: 20px;
   padding: 5px 10px;
   color: #fff;
   font-weight: 500;
-  background: #261E35;
+  background: #261e35;
 }
 
-.form-group>input {
+.form-group > input {
   border: none;
   background: transparent;
   color: #fff;
@@ -371,35 +358,38 @@ element.style {}
   padding-top: 10px;
 }
 
-input[type]:focus{ 
+input[type]:focus {
   box-shadow: none;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
   opacity: 1; /* Firefox */
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: #fff;
- }
- 
- ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #fff;
- }
+}
 
- input[type=submit]{ 
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
+}
+
+input[type="submit"] {
   background-color: #1ce1a6;
   padding: 11px 35px;
   font-size: 20px;
   font-weight: 600;
-  color:#fff;
+  color: #fff;
   height: 60px;
   border: 2px solid #fff;
   border-radius: 10px;
   cursor: pointer;
   margin: 10px 0px;
 }
- input[type=submit]:hover{ 
-  background-color: #1B1037;
+input[type="submit"]:hover {
+  background-color: #1b1037;
 }
 
 /* .GetStartedHeading:before {
@@ -424,8 +414,34 @@ input[type]:focus{
   color: #0de2a3;
 }
 
-
 .strokeheading {
   -webkit-text-stroke: 1px #16e2a5;
   -webkit-text-fill-color: white;
 }
+
+/* Services Column Sliider */
+
+/* .mainColSlider {
+  padding-bottom: 100px;
+}
+
+.mainColSlider .swiper-button-prev {
+bottom: 0 !important;
+top: auto !important;
+left: 50% !important;
+} */
+
+/* .swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "" !important;
+  color: black;
+  top: auto !important;
+  bottom: 0 !important;
+  margin-top: auto;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+} */

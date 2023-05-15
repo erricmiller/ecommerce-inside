@@ -10,14 +10,14 @@ const Expertise = () => {
       <div className="container mx-auto">
         <div className="development-box">
           <ul className="mx-auto flex list-none items-center justify-center py-[35px] text-center">
-            <li className="flex flex-col items-center justify-center border-r border-gray-400 px-[40px]">
+            <li className="flex flex-col items-center justify-center border-r border-gray-400 px-[15px] sm:px-[40px]">
               <img src="/development-icon.webp" alt="development-icon" />
               <h3 className="pt-[16px] text-[20px] font-bold text-[#333]">
                 Web Development
                 <br /> Technologies
               </h3>
             </li>
-            <li className="flex flex-col items-center justify-center px-[40px]">
+            <li className="flex flex-col items-center justify-center px-[15px] sm:px-[40px]">
               <img src="/development-icon-2.webp" alt="development-icon" />
               <h3 className="pt-[16px] text-[20px] font-bold text-[#333]">
                 Mobile Application <br />
@@ -74,7 +74,7 @@ const Expertise = () => {
           </div>
         </div>
       </div>
-      <div className="about-btn flex items-center justify-center gap-8">
+      <div className="about-btn flex flex-col sm:flex-row items-center justify-center gap-8">
         <Button variant="Dark" className="">
           Let's Get Started
         </Button>

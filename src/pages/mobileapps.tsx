@@ -177,7 +177,7 @@ const mobileapps: FC = () => {
               ))}
             </div>
 
-            <div className="about-btn mt-[30px] flex justify-center gap-8">
+            <div className="about-btn mt-[30px] flex flex-col sm:flex-row justify-center gap-8">
               <Button variant="Dark" className="">
                 Let's Get Started
               </Button>
@@ -203,7 +203,7 @@ const mobileapps: FC = () => {
               <p className="inf py-4 pb-2 text-[16px] font-normal text-white lg:pr-6 lg:text-right">
                 Total Website Developed <br /> By SVAP Team
               </p>
-              <h3 className="bg-gradient-to-r from-caribbeangreen to-white bg-clip-text text-[50px]  font-extrabold leading-[1.2] text-transparent lg:text-[60px]">
+              <h3 className="bg-gradient-to-r from-caribbeangreen to-white bg-clip-text text-[35px] sm:text-[50px]  font-extrabold leading-[1.2] text-transparent lg:text-[60px]">
                 500+
               </h3>
             </div>
@@ -211,7 +211,7 @@ const mobileapps: FC = () => {
               <p className="inf py-4 pb-2 text-[16px] font-normal text-white lg:pr-6 lg:text-right">
                 Our <br /> Client
               </p>
-              <h3 className="bg-gradient-to-r from-caribbeangreen to-white bg-clip-text text-[50px]  font-extrabold leading-[1.2] text-transparent lg:text-[60px]">
+              <h3 className="bg-gradient-to-r from-caribbeangreen to-white bg-clip-text text-[35px] sm:text-[50px]  font-extrabold leading-[1.2] text-transparent lg:text-[60px]">
                 100+
               </h3>
             </div>
@@ -219,7 +219,7 @@ const mobileapps: FC = () => {
               <p className="inf py-4 pb-2 text-[16px] font-normal text-white lg:pr-6 lg:text-right">
                 Total Number <br /> of Employees
               </p>
-              <h3 className="bg-gradient-to-r from-caribbeangreen to-white bg-clip-text text-[50px]  font-extrabold leading-[1.2] text-transparent lg:text-[60px]">
+              <h3 className="bg-gradient-to-r from-caribbeangreen to-white bg-clip-text text-[35px] sm:text-[50px] font-extrabold leading-[1.2] text-transparent lg:text-[60px]">
                 300+
               </h3>
             </div>
@@ -283,7 +283,7 @@ const mobileapps: FC = () => {
           ))}
         </div>
 
-        <div className="about-btn flex items-center justify-center gap-8">
+        <div className="about-btn flex flex-col sm:flex-row items-center justify-center gap-8">
           <Button variant="Dark" className="">
             Let's Get Started
           </Button>

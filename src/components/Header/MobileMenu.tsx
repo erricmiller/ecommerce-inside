@@ -73,7 +73,7 @@ const MobileMenu: FC = () => {
 
 
             <div className='absolute bottom-0 left-0 right-0 mb-6'>
-              <ul className='flex gap-5 items-center justify-center'>
+              <ul className='flex flex-col sm:flex-row gap-5 items-center justify-center'>
                 {
                   navlinks.map((navlink) => (
                     <li key={navlink.name} className='hover:text-caribbeangreen cursor-pointer'>

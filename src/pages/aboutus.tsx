@@ -61,7 +61,7 @@ const aboutus = () => {
 
 
 
-      <section className="flex justify-center overflow-hidden pt-[40px]">
+      <section className="flex justify-center overflow-hidden pt-[40px] min-w-full">
         <div className="review-container flex max-w-[540px] flex-col items-center justify-between gap-[10px] px-[15px] md:max-w-[720px] lg:max-w-[960px] lg:flex-row xl:max-w-[1140px]">
           <img src="/about-review-1.webp" alt="" />
           <img src="/about-review-2.webp" alt="" />
@@ -72,7 +72,7 @@ const aboutus = () => {
 
 
       <section className="creativity pt-[80px] ">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-[30px]">
           <div className="row -mx-[15px] flex flex-col  items-center lg:flex-row">
             <div className="about-content lg:max-w-[50%]">
               <h2 className="xl:[50px] text-[30px] font-bold leading-[1.2] text-[#333] md:text-[40px] lg:text-[46] ">
@@ -88,7 +88,7 @@ const aboutus = () => {
                 have in common is a drive to produce exceptional work that helps
                 our clients reach the top.
               </p>
-              <div className="about-btn mt-[30px] flex justify-center gap-8">
+              <div className="about-btn mt-[30px] flex flex-col sm:flex-row justify-center gap-8">
                 <Button variant="Dark" className="">
                   Let's Get Started
                 </Button>
@@ -107,7 +107,7 @@ const aboutus = () => {
       </section>
 
       <section className="inner-smarter-sec py-[50px] md:py-[70px] lg:py-[100px] xl:py-[125px]">
-        <div className="container mx-auto px-[15px]">
+        <div className="container mx-auto px-[30px]">
           <div className="-mx-[15px] flex flex-col items-center lg:flex-row">
             <div className="inner-smater-heading ">
               <h3 className="text-[24px] font-bold leading-[1.2] text-caribbeangreen">
@@ -128,18 +128,18 @@ const aboutus = () => {
             </div>
           </div>
 
-          {/* <div className=" grid grid-cols-12  justify-between pt-[80px] overflow-hidden">
+          <div className=" grid grid-cols-12  justify-between pt-[80px] overflow-hidden">
             <div className="smarter-img hidden lg:block col-span-4">
               <img src="/about-smarter-img.webp" alt="smarter-img" />
             </div>
 
-            <div className="card-slider-wrapper col-span-8">
+            <div className="card-slider-wrapper col-span-12 lg:col-span-8">
               <AboutStrategySlider />
             </div>
-          </div> */}
+          </div>
         </div>
         
-        <AboutStrategySlider />
+        {/* <AboutStrategySlider /> */}
 
       </section>
 

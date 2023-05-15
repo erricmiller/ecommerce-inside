@@ -83,7 +83,7 @@ const PortfolioPackages = () => {
         </div>
       </div>
       <div className="portfolio-cta border-b border-[#00000045] py-[30px] text-center lg:py-[50px]">
-        <div className="about-btn flex items-center justify-center gap-8">
+        <div className="about-btn flex flex-col sm:flex-row items-center justify-center gap-8">
           <Button variant="Dark" className="">
             Let's Get Started
           </Button>
@@ -102,8 +102,8 @@ const PortfolioPackages = () => {
           </div>
         </div>
       </div>
-      <div className="portfolio-packages mx-auto w-[75%] px-[50px] pb-[50px]">
-        <div className="portfolio-packages-container mx-auto px-[30px]">
+      <div className="portfolio-packages mx-auto w-[75%] sm:px-[50px] pb-[50px]">
+        <div className="portfolio-packages-container mx-auto sm:px-[30px]">
           {/* Package Cards */}
           <div className="grid  gap-5 md:grid-cols-2 lg:grid-cols-3">
             {filterCards &&
@@ -114,14 +114,7 @@ const PortfolioPackages = () => {
         </div>
       </div>
 
-      <Expertise />
-
-      <GetStarted />
-
-      <Testimonials />
-
-      <Footer /> 
-      <CopyRightBar />
+      
 
       
     </section>

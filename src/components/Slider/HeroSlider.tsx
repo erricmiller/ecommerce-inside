@@ -38,7 +38,7 @@ const HeroSlider: FC = () => {
           style={{ backgroundImage: `url(${data.url})` }}
         >
           <div className="flex items-center py-[250px] ">
-            <div className=" w-[80%]  rounded-br-[200px] bg-transparent bg-[url('/banner-slide-img.webp')] bg-cover pb-[50px] pl-[40px] pr-[40px] pt-[50px] md:w-[60%] md:px-[50px] md:py-[40px] lg:w-[40%] lg:px-[70px] xl:py-[90px]">
+            <div className=" w-[85%] sm:w-[80%]  rounded-br-[200px] bg-transparent bg-[url('/banner-slide-img.webp')] bg-cover pb-[50px] pl-[8px]  sm:pl-[40px] pr-[40px] pt-[50px] md:w-[60%] md:px-[50px] md:py-[40px] lg:w-[40%] lg:px-[70px] xl:py-[90px]">
               <h1 className=" pb-[10px] text-[20px] font-bold leading-[30px] text-white md:pb-[5px] md:text-[18px] md:leading-[23px] lg:pb-[10px] lg:text-[34px] lg:leading-[40px] xl:pb-[15px] xl:text-[42px] xl:leading-[50px]">
                 {data.title}
               </h1>

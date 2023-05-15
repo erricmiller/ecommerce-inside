@@ -1,27 +1,31 @@
-import React,{useRef} from 'react'
-import $ from 'jquery';
+import React,{useRef, useState} from 'react'
 import { Swiper, SwiperSlide, useSwiper, useSwiperSlide  } from "swiper/react";
-import SwiperCore, { Autoplay, Navigation,Pagination } from "swiper";
+import SwiperCore, { Autoplay, Navigation,Pagination,Thumbs,FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+import 'swiper/css/thumbs';
 
 const ContactSlider = () => {
+  const [thumbsSwiper,setThumbsSwiper] =useState(null);
     SwiperCore.use([Autoplay]);
   const swiper = useSwiper();
   const swiperSlide = useSwiperSlide();
 
 
   return (
+    <>
     <Swiper
-      modules={[Navigation,Pagination]}
+      modules={[Navigation,Pagination,FreeMode,Thumbs]}
     //   pagination={{ clickable: true }}
       slidesPerView={1}
       loop={true}
-      autoplay={{
+      thumbs={{swiper:thumbsSwiper}}
+      autoplay={{ 
         delay: 2000,
       }}
-      className=""
+      className="contactSwiper2"
     >
         <SwiperSlide>
         <div className="w-full flex flex-col items-center justify-center bg-darkblue py-[50px]">
@@ -42,6 +46,7 @@ const ContactSlider = () => {
             <button  className='slideNext-btn.bottom-nav__item slideNext-btn bottom-nav__item bg-white border border-caribbeangreen rounded-md text-darkblue py-2 px-5 hover:text-white hover:bg-caribbeangreen hover:border-white w-[120px]' >USA</button> */}
         </div>
     </Swiper>
+    </>
   )
 }
 

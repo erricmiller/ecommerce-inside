@@ -1,6 +1,11 @@
 import React, { FC } from 'react'
+import CopyRightBar from '~/components/CopyRightBar'
+import Expertise from '~/components/Expertise'
+import Footer from '~/components/Footer'
+import GetStarted from '~/components/GetStarted'
 import Header from '~/components/Header/Header'
 import PortfolioPackages from '~/components/Packages/PortfolioPackages'
+import Testimonials from '~/components/Testimonials'
 
 const portfolio:FC = () => {
   return (
@@ -22,6 +27,14 @@ const portfolio:FC = () => {
     </section>
 
     <PortfolioPackages />
+     <Expertise />
+
+     <GetStarted />
+
+      <Testimonials />
+
+      <Footer /> 
+      <CopyRightBar />
 
     
     </>

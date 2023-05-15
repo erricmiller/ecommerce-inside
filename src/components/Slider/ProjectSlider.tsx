@@ -22,7 +22,7 @@ const ProjectSlider: FC = () => {
     >
       {TwinColSliderData.map((data, index) => (
         <SwiperSlide key={index}>
-          <div className="flex flex-col gap-7 px-[50px] md:flex-row">
+          <div className="flex flex-col gap-7 px-[0px] sm:px-[50px] md:flex-row">
             <div className="slider-data md:w-[50%] ">
               <h3 className="pb-[10px] text-[15px] font-bold text-[#302839] md:pb-[13px] md:text-[20px] lg:pb-[20px] lg:text-[24px]">
                 PROJECT

@@ -3,7 +3,7 @@ import React, { FC } from "react";
 const GetStarted: FC = () => {
   return (
     <section className="relative flex items-center bg-[url('/footer-form-bg.webp')] py-[30px] md:h-[860px] md:py-[60px] lg:h-[957px] overflow-hidden">
-      <div className="container mx-auto px-[15px]">
+      <div className="container mx-auto sm:px-[15px]">
         <div className="row flex flex-col lg:flex-row gap-8">
           <div className="getStartedLeft hidden lg:block relative lg:max-w-[50%]">
             
@@ -29,7 +29,7 @@ const GetStarted: FC = () => {
 
           </div>
           <div className="getStartedRight relative lg:max-w-[50%]">
-            <h3 className="GetStartedHeading text-[30px] font-bold text-white md:text-[40px] lg:text-[50px]   lg:before:bg-[url('/footer-right-circle.webp')] before:w-[794px] before:h-[806px] before:-top-[220px] before:-right-[350px] before:absolute bg-no-repeat before:animate-circle-spin ">
+            <h3 className="GetStartedHeading text-[30px] font-bold text-white md:text-[40px] lg:text-[50px] before:hidden lg:before:block  lg:before:bg-[url('/footer-right-circle.webp')] before:w-[794px] before:h-[806px] before:-top-[220px] before:-right-[350px] before:absolute bg-no-repeat before:animate-circle-spin ">
               Let's Get Started!
             </h3>
             <p className="md:text[16] pb-[26px] pt-[10px] text-[14px] text-[#b4a5d6] md:pb-[36px] md:pt-[15px] lg:text-[20px]">
@@ -40,15 +40,15 @@ const GetStarted: FC = () => {
               <form id="Get Started">
                 <div className="form-group">
                   <label>Your Name</label>
-                  <input type="text" className="form-control input-lg" placeholder="Enter Your Name" size={47}/>
+                  <input type="text" className="form-control input-lg w-[330px] sm:w-auto" placeholder="Enter Your Name" size={47}/>
                 </div>
                 <div className="form-group">
                   <label>Email Address</label>
-                  <input type="email" className="form-control input-lg" placeholder="Enter Your Email Address" size={47}/>
+                  <input type="email" className="form-control input-lg w-[330px] sm:w-auto" placeholder="Enter Your Email Address" size={47}/>
                 </div>
                 <div className="form-group">
                   <label>Phone No</label>
-                  <input type="tel" className="form-control input-lg" placeholder="Enter Your Phone Number" size={47} />
+                  <input type="tel" className="form-control input-lg w-[330px] sm:w-auto" placeholder="Enter Your Phone Number" size={47} />
                 </div>
                 <input type="submit"  value={"Let's Get Started"}/>
               </form>
