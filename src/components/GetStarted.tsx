@@ -3,7 +3,7 @@ import React, { FC } from "react";
 const GetStarted: FC = () => {
   return (
     <section className="relative flex items-center bg-[url('/footer-form-bg.webp')] py-[30px] md:h-[860px] md:py-[60px] lg:h-[957px] overflow-hidden">
-      <div className="container mx-auto sm:px-[15px]">
+      <div className="container mx-auto px-[10px]">
         <div className="row flex flex-col lg:flex-row gap-8">
           <div className="getStartedLeft hidden lg:block relative lg:max-w-[50%]">
             
@@ -40,15 +40,15 @@ const GetStarted: FC = () => {
               <form id="Get Started">
                 <div className="form-group">
                   <label>Your Name</label>
-                  <input type="text" className="form-control input-lg w-[330px] sm:w-auto" placeholder="Enter Your Name" size={47}/>
+                  <input type="text" className="form-control input-lg w-full sm:w-auto" placeholder="Enter Your Name" size={47}/>
                 </div>
                 <div className="form-group">
                   <label>Email Address</label>
-                  <input type="email" className="form-control input-lg w-[330px] sm:w-auto" placeholder="Enter Your Email Address" size={47}/>
+                  <input type="email" className="form-control input-lg w-full sm:w-auto" placeholder="Enter Your Email Address" size={47}/>
                 </div>
                 <div className="form-group">
                   <label>Phone No</label>
-                  <input type="tel" className="form-control input-lg w-[330px] sm:w-auto" placeholder="Enter Your Phone Number" size={47} />
+                  <input type="tel" className="form-control input-lg w-full sm:w-auto" placeholder="Enter Your Phone Number" size={47} />
                 </div>
                 <input type="submit"  value={"Let's Get Started"}/>
               </form>

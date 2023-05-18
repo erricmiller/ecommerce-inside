@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC,useState,useEffect } from 'react'
 import { BiChevronDown } from 'react-icons/bi';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
@@ -8,11 +8,26 @@ import MobileMenu from './MobileMenu';
 import Button from '../ui/Button';
 
 const NavBar: FC = () => {
+  const [color, setColor] = useState(false)
+  const changeColor =() => {
+    if(window.scrollY >= 250){
+      setColor(true)
+    }else{
+      setColor(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeColor);
+  }, [])
+  
+
+  
   return (
 
 
 
-    <NavigationMenu.Root className='menu-wrapper bg-transparent flex items-center justify-between px-3 text-white h-20 border-b'>
+    <NavigationMenu.Root className={`menu-wrapper flex items-center justify-between px-3 text-white h-20 border-b ${color ? "bg-black" : "bg-transparent"}`}>
       <div className="logo h-full flex items-center w-[150px] sm:w-[200px] lg:w-auto">
         <Link href={"/"}>
           <img src="/logo-trans.png" alt="Ecommerce Inside Logo" />

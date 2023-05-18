@@ -28,7 +28,7 @@ const Banner: FC<BannerProps> = ({
                 {smallHeading}
               </span>
             )}
-            <h1 className="text-[20px] font-bold leading-[30px]  text-white lg:text-[38px]  lg:leading-[1.2] xl:text-[45px]">
+            <h1 className="text-[20px] font-bold leading-[30px]  text-white lg:text-[38px]  lg:leading-[1.2] xl:text-[45px] pb-[15px]">
               {mainHeading}
             </h1>
             {desc && (

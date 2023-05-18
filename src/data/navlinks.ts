@@ -33,7 +33,7 @@ const navlinks = [
             },
             {
                 name: "Animation",
-                link: "/animaion",
+                link: "/animation",
             },
         ]
     },

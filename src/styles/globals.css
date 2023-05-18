@@ -324,11 +324,11 @@ element.style {
     max-width: 540px;
   }
 }
-@media (min-width: 369px) and (max-width: 576px) {
+/* @media (min-width: 369px) and (max-width: 576px) {
   .container {
     max-width: 350px;
   }
-}
+} */
 
 .form-group {
   border: 2px solid #fff;
@@ -445,3 +445,14 @@ left: 50% !important;
   justify-content: center;
   color: black;
 } */
+
+.serviceslidergradient {
+  background: linear-gradient(to right, #f97135 45%, #ef103d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.arrowedList:before {
+  content: '\27A4';
+  margin-right: 11px;
+}

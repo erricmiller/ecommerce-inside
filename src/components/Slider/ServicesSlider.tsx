@@ -7,7 +7,11 @@ import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 
 SwiperCore.use([Navigation, Pagination]);
 
-const ServicesSlider = () => {
+interface ServiceSliderProps {
+  sliderData: Array<object>;
+}
+
+const ServicesSlider = ({ sliderData }) => {
   const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
   return (
@@ -20,54 +24,41 @@ const ServicesSlider = () => {
           "--swiper-navigation-color": "black",
         }}
       >
-        <SwiperSlide>
-          <div className="flex flex-col gap-7 px-[50px] md:flex-row">
-            <div className="slider-data md:w-[50%] ">
-              <h3 className="pb-[10px] text-[15px] font-bold text-[#302839] md:pb-[13px] md:text-[20px] lg:pb-[20px] lg:text-[24px]">
-                PROJECT
-              </h3>
-              <h4 className="pb-[8px]  text-[14px] text-[#13101a] md:pb-[10px] md:text-[17px] lg:pb-[40px] lg:text-[20px]">
-                Slide 1
-              </h4>
-              <h2 className="pb-[13px] text-[27px] font-bold text-[#13101a] md:pb-[16px] md:text-[33px] lg:pb-[40px] lg:text-[50px]">
-                Project 1
-              </h2>
-              <p className="pb-[18px]  text-[13px] leading-[22px] text-[#13101a] md:pb-[20px] md:text-[14px] md:leading-[26px] lg:pb-[20px] lg:text-[16px] lg:leading-[30px]">
-                Project Desc
-              </p>
-              <Button variant="Green" className="cursor-pointer">
-                Case Study
-              </Button>
+        {sliderData.map((slide) => (
+          <SwiperSlide>
+            <div className="flex flex-col-reverse px-[15px] md:flex-row ">
+              <div className="data flex flex-col justify-center md:w-[50%] mt-[45px] items-center md:items-start">
+                <h2 className="text-[14px] font-semibold leading-[1.2] text-[#333] sm:text-center md:text-left xs:text-center xs:text-[14px]">
+                  {slide.subHeading}
+                </h2>
+                <h3 className="serviceslidergradient pt-[6px] font-bold leading-[1.2] sm:text-center sm:text-[30px] md:text-left md:text-[40px] lg:text-[33px] xl:text-[38px] xs:text-center xs:text-[24px]">
+                  {slide.Heading}
+                </h3>
+                <p className="pb-[25px] pt-[15px] text-[#666] sm:text-center sm:text-[16px] md:pb-[35px] md:text-left md:text-[19px] text-center nd:text-left xs:text-[16px]">
+                  {slide.desc}
+                </p>
+                {slide.options &&
+                  <ul className="list-none pb-[18px]">
+                  {slide.options.map((option) => (
+                    <li className="arrowedList pb-[13px] text-[20px] text-[#333] xs:pb-[13px] xs:text-[20px]">
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+                }
+                <div className="about-btn flex flex-col  gap-8 lg:flex-row">
+                  <Button variant="Dark" className="">
+                    Let's Get Started
+                  </Button>
+                  <Button variant="Green">Consult An Expert</Button>
+                </div>
+              </div>
+              <div className="img md:w-[50%] flex items-center justify-center">
+                <img src={slide.img} alt="img" />
+              </div>
             </div>
-            <div className="slider-img">
-              <img src={"case-img-1.webp"} alt="Slider Project Image" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex flex-col gap-7 px-[50px] md:flex-row">
-            <div className="slider-data md:w-[50%] ">
-              <h3 className="pb-[10px] text-[15px] font-bold text-[#302839] md:pb-[13px] md:text-[20px] lg:pb-[20px] lg:text-[24px]">
-                PROJECT
-              </h3>
-              <h4 className="pb-[8px]  text-[14px] text-[#13101a] md:pb-[10px] md:text-[17px] lg:pb-[40px] lg:text-[20px]">
-                Slide 2
-              </h4>
-              <h2 className="pb-[13px] text-[27px] font-bold text-[#13101a] md:pb-[16px] md:text-[33px] lg:pb-[40px] lg:text-[50px]">
-                Project 2
-              </h2>
-              <p className="pb-[18px]  text-[13px] leading-[22px] text-[#13101a] md:pb-[20px] md:text-[14px] md:leading-[26px] lg:pb-[20px] lg:text-[16px] lg:leading-[30px]">
-                Project Desc
-              </p>
-              <Button variant="Green" className="cursor-pointer">
-                Case Study
-              </Button>
-            </div>
-            <div className="slider-img">
-              <img src={"case-img-2.webp"} alt="Slider Project Image" />
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
       <div className="flex items-center justify-center gap-5 p-6">
         <div className="cursor-pointer" ref={(node) => setPrevEl(node)}>
