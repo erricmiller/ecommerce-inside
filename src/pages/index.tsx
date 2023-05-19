@@ -1,18 +1,10 @@
 import { type NextPage } from "next";
-import {useState} from 'react';
 import Head from "next/head";
 import Header from "~/components/Header/Header";
 import ServicePackages from "~/components/Packages/ServicePackages";
-import Slider from "~/components/Slider/Slider";
-import TwinColSlider from "~/components/Slider/TwinColSlider";
-import ClientDtaCard from "~/components/cards/ClientDtaCard";
 import ServicesCard from "~/components/cards/ServicesCard";
-import TechLeaf from "~/components/TechLeaf";
 import Button from "~/components/ui/Button";
 import ServicesData from "~/data/ServicesData";
-import clientsData from "~/data/clientsData";
-import leftTechLeafData from "~/data/leftTechLeafData";
-import rightTechLeafData from "~/data/rightTechLeafData";
 import GetStarted from "~/components/GetStarted";
 import Footer from "~/components/Footer";
 import CopyRightBar from "~/components/CopyRightBar";
@@ -22,10 +14,10 @@ import MyModal from "~/components/MyModal";
 import Testimonials from "~/components/Testimonials";
 import Expertise from "~/components/Expertise";
 import Agencies from "~/components/Agencies";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 
 const Home: NextPage = () => {
-  const [showModal, setShowModal] = useState(false);
-
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
   return (
     <>
       <Head>
@@ -45,7 +37,7 @@ const Home: NextPage = () => {
           </div>
           <p className="text-black text-p animate-fade-in-up text-center">A full service digital marketing platform that caters to every scope from marketing to the brand building along with a wide range of latest IT solutions. We are rated as USA’s best digital marketing agency for our swift deliveries and professionalism. We are a bunch of creative minds who think alike to make marketing goals and dreams come true. Our experts have over decades of industry experience as well as expertise. Ecommerce Inside devises strategies and methodologies that make your brand stand out among others. With complete hands-on experience in web development, design, brand building, content optimization. We’ll upscale your sales, digital presence, and leads. So what are you waiting for? Contact us today for a consultation on how we can help you with all your digital needs & make it count with the top digital marketing companies in the UAE.</p>
           <div className="flex md:flex-row flex-col items-center gap-10 mt-6">
-            <Button variant='Dark' className="">Let's Get Your Project Started</Button>
+            <Button variant='Dark' className="" onClick={()=>setModalActive(true)}>Let's Get Your Project Started</Button>
             <Button variant='Green' className="">Talk To Our Expert For Free</Button>
           </div>
         </section>
@@ -116,7 +108,7 @@ const Home: NextPage = () => {
                       <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>Newsletter Design</li>
 
                     </ul>
-                    <Button variant="Dark">Let's Get started</Button>
+                    <Button variant="Dark" onClick={()=>setModalActive(true)}>Let's Get started</Button>
                   </div>
                 </div>
               </div>
@@ -143,7 +135,7 @@ const Home: NextPage = () => {
 
         <CopyRightBar />
 
-        <MyModal visible={showModal} />
+        <MyModal />
       </main>
     </>
   );

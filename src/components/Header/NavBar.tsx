@@ -6,8 +6,12 @@ import classNames from 'classnames';
 import navlinks from '~/data/navlinks';
 import MobileMenu from './MobileMenu';
 import Button from '../ui/Button';
+import useRQGlobalState from '~/utils/useRQGlobalState';
 
 const NavBar: FC = () => {
+
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
+
   const [color, setColor] = useState(false)
   const changeColor =() => {
     if(window.scrollY >= 250){
@@ -82,7 +86,7 @@ const NavBar: FC = () => {
       </NavigationMenu.List>
 
       <div className="CTA flex items-center gap-4">
-        <Button variant='Dark'>Request Info</Button>
+        <Button variant='Dark' onClick={()=>setModalActive(true)}>Request Info</Button>
         <MobileMenu />
       </div>
     </NavigationMenu.Root>

@@ -5,8 +5,10 @@ import SwiperCore, { Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import Button from "../ui/Button";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 
 const HeroSlider: FC = () => {
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
   const slides = [
     {
       title: "Top Tier Digital Marketing Agency in Pakistan",
@@ -45,7 +47,7 @@ const HeroSlider: FC = () => {
               <p className="text-[14px] text-white md:text-[12px] lg:text-[14px] lg:pb-[20px] xl:pb-[35px] xl:text-[17px]">
                 {data.desc}
               </p>
-              <Button variant="Green">Request Quote For Free</Button>
+              <Button variant="Green" onClick={()=>setModalActive(true)}>Request Quote For Free</Button>
             </div>
           </div>
         </SwiperSlide>

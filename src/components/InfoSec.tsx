@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import Button from './ui/Button'
+import useRQGlobalState from '~/utils/useRQGlobalState';
 
 interface InfoSecProps {
     smallHeading :string,
@@ -9,6 +10,7 @@ interface InfoSecProps {
 }
 
 const InfoSec:FC<InfoSecProps> = ({smallHeading,mainHeading,desc,infocardData}) => {
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
   return (
     <section className=" about-choose-section bg-[url('/about-choose-bg.webp')] bg-cover bg-no-repeat py-[60px] md:py-[90px]">
         <div className="container mx-auto px-[15px]">
@@ -41,7 +43,7 @@ const InfoSec:FC<InfoSecProps> = ({smallHeading,mainHeading,desc,infocardData}) 
           </div>
 
           <div className="about-btn  flex flex-col sm:flex-row items-center justify-center gap-8">
-            <Button variant="Dark" className="">
+            <Button variant="Dark" className="" onClick={()=>setModalActive(true)}>
               Let's Get Started
             </Button>
             <Button variant="Green">Consult An Expert</Button>

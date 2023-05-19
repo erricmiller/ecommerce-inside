@@ -1,8 +1,10 @@
 import React, { FC } from 'react'
 import Button from '../ui/Button'
 import Link from 'next/link'
+import useRQGlobalState from '~/utils/useRQGlobalState';
 
 const PackageCard: FC = ({ info }) => {
+    const [modalActive,setModalActive] = useRQGlobalState('modal',false);
     return (
 
         <div className="package-box border-darkblue border-2 rounded-lg p-[35px] group hover:bg-darkblue duration-300 flex flex-col" >
@@ -22,7 +24,7 @@ const PackageCard: FC = ({ info }) => {
                     }
                 </ul>
             </div>
-            <Button variant='Green' className='max-w-[150px] mx-auto'>Order Now</Button>
+            <Button variant='Green' className='max-w-[150px] mx-auto' onClick={()=>setModalActive(true)}>Order Now</Button>
             <div className='flex flex-col items-center justify-center gap-1 pt-4'>
                 <p className='text-xs text-caribbeangreen group-hover:text-white'>Share your idea?</p>
                 <Link href={"tel:+17343614340"} className='text-p font-bold group-hover:text-white'>+1 (734) 361 4340</Link>

@@ -3,8 +3,10 @@ import Button from "./ui/Button";
 import TechLeaf from "./TechLeaf";
 import rightTechLeafData from "~/data/rightTechLeafData";
 import leftTechLeafData from "~/data/leftTechLeafData";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 
 const Expertise = () => {
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
   return (
     <section className="pb-[100px]">
       <div className="container mx-auto">
@@ -75,7 +77,7 @@ const Expertise = () => {
         </div>
       </div>
       <div className="about-btn flex flex-col sm:flex-row items-center justify-center gap-8">
-        <Button variant="Dark" className="">
+        <Button variant="Dark" className="" onClick={()=>setModalActive(true)}>
           Let's Get Started
         </Button>
         <Button variant="Green">Consult An Expert</Button>

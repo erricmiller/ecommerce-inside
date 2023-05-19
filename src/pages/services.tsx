@@ -6,13 +6,17 @@ import Expertise from "~/components/Expertise";
 import Footer from "~/components/Footer";
 import GetStarted from "~/components/GetStarted";
 import Header from "~/components/Header/Header";
+import MyModal from "~/components/MyModal";
 import ServicesContact from "~/components/ServicesContact";
 import Testimonials from "~/components/Testimonials";
 import InfoSec from "~/components/infoSec";
 import Button from "~/components/ui/Button";
 import servicesqualityData from "~/data/servicesqualityData";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 
 const services = () => {
+
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
 
   const infoSecData = [
     {
@@ -107,7 +111,7 @@ const services = () => {
             
           </div>
           <div className="about-btn flex flex-col sm:flex-row items-center justify-center gap-8 ">
-              <Button variant="Dark" className="">
+              <Button variant="Dark" className="" onClick={()=>setModalActive(true)}>
                 Let's Get Started
               </Button>
               <Button variant="Green">Consult An Expert</Button>
@@ -124,6 +128,7 @@ const services = () => {
       <Testimonials />
       <Footer />
       <CopyRightBar />
+      <MyModal />
     </>
   );
 };

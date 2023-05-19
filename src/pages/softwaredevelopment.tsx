@@ -1,13 +1,24 @@
 import { NextPage } from "next";
 import React from "react";
 import Banner from "~/components/Banner";
+import CopyRightBar from "~/components/CopyRightBar";
+import Expertise from "~/components/Expertise";
+import Footer from "~/components/Footer";
+import GetStarted from "~/components/GetStarted";
 import Header from "~/components/Header/Header";
+import InfoSec from "~/components/InfoSec";
 import MainHeading from "~/components/MainHeading";
+import MyModal from "~/components/MyModal";
 import ServicesContact from "~/components/ServicesContact";
 import ServicesSlider from "~/components/Slider/ServicesSlider";
+import Testimonials from "~/components/Testimonials";
 import Button from "~/components/ui/Button";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 
 const softwaredevelopment: NextPage = () => {
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
+
+
   const infoSecData = [
     {
       title: "Exceptional Service",
@@ -139,13 +150,29 @@ const softwaredevelopment: NextPage = () => {
             </div>
           </div>
             <div className="about-btn mt-[30px] flex flex-col sm:flex-row justify-center gap-8 mx-auto">
-                <Button variant="Dark" className="">
+                <Button variant="Dark" className="" onClick={()=>setModalActive(true)}>
                   Let's Get Started
                 </Button>
                 <Button variant="Green">Consult An Expert</Button>
               </div>
         </div>
       </section>
+
+      <InfoSec
+        infocardData={infoSecData}
+        smallHeading={"We Are The Best Branding Agency USA"}
+        mainHeading={"Redefine. Revolution. Robust"}
+        desc={
+          "Ecommerce Inside emphasizes on redefining the monotonous tech paradigms and works on bridging revolutionary robust and rigorous apps, solutions, and services that facilitates clients and customers at the most affordable prices."
+        }
+      />
+
+      <Expertise />
+        <GetStarted />
+        <Testimonials />
+        <Footer />
+        <CopyRightBar />
+      <MyModal />
     </>
   );
 };

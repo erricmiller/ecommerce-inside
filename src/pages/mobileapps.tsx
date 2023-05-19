@@ -6,12 +6,18 @@ import Expertise from "~/components/Expertise";
 import Footer from "~/components/Footer";
 import GetStarted from "~/components/GetStarted";
 import Header from "~/components/Header/Header";
+import MyModal from "~/components/MyModal";
 import ServicesContact from "~/components/ServicesContact";
 import Testimonials from "~/components/Testimonials";
 import InfoSec from "~/components/infoSec";
 import Button from "~/components/ui/Button";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 
 const mobileapps: FC = () => {
+
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
+
+
   const mobileCard = [
     {
       title: "On-demand Apps",
@@ -178,7 +184,7 @@ const mobileapps: FC = () => {
             </div>
 
             <div className="about-btn mt-[30px] flex flex-col sm:flex-row justify-center gap-8">
-              <Button variant="Dark" className="">
+              <Button variant="Dark" className="" onClick={()=>setModalActive(true)}>
                 Let's Get Started
               </Button>
               <Button variant="Green">Consult An Expert</Button>
@@ -284,7 +290,7 @@ const mobileapps: FC = () => {
         </div>
 
         <div className="about-btn flex flex-col sm:flex-row items-center justify-center gap-8">
-          <Button variant="Dark" className="">
+          <Button variant="Dark" className="" onClick={()=>setModalActive(true)}>
             Let's Get Started
           </Button>
           <Button variant="Green">Consult An Expert</Button>
@@ -301,6 +307,7 @@ const mobileapps: FC = () => {
       <Testimonials />
       <Footer />
       <CopyRightBar />
+      <MyModal />
     </>
   );
 };

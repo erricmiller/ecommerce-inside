@@ -4,6 +4,7 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 import "swiper/swiper-bundle.css";
 import Button from "../ui/Button";
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -14,6 +15,10 @@ interface ServiceSliderProps {
 const ServicesSlider = ({ sliderData }) => {
   const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
+
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
+
+
   return (
     <>
       <Swiper
@@ -47,7 +52,7 @@ const ServicesSlider = ({ sliderData }) => {
                 </ul>
                 }
                 <div className="about-btn flex flex-col  gap-8 lg:flex-row">
-                  <Button variant="Dark" className="">
+                  <Button variant="Dark" className="" onClick={()=>setModalActive(true)}>
                     Let's Get Started
                   </Button>
                   <Button variant="Green">Consult An Expert</Button>

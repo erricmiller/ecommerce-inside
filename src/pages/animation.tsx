@@ -8,6 +8,7 @@ import GetStarted from '~/components/GetStarted'
 import Header from '~/components/Header/Header'
 import InfoSec from '~/components/InfoSec'
 import MainHeading from '~/components/MainHeading'
+import MyModal from '~/components/MyModal'
 import ServicesContact from '~/components/ServicesContact'
 import ServicesSlider from '~/components/Slider/ServicesSlider'
 import Testimonials from '~/components/Testimonials'
@@ -134,6 +135,7 @@ const animation:NextPage = () => {
         <Testimonials />
         <Footer />
         <CopyRightBar />
+        <MyModal />
     </>
   )
 }

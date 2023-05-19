@@ -1,4 +1,5 @@
 import React from "react";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 import Agencies from "~/components/Agencies";
 import Banner from "~/components/Banner";
 import CopyRightBar from "~/components/CopyRightBar";
@@ -10,9 +11,13 @@ import AboutStrategySlider from "~/components/Slider/AboutStrategySlider";
 import Testimonials from "~/components/Testimonials";
 import InfoSec from "~/components/infoSec";
 import Button from "~/components/ui/Button";
+import MyModal from "~/components/MyModal";
 // import aboutchooseData from "~/data/aboutchooseData";
 
 const aboutus = () => {
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
+
+
   const aboutchooseData = [
     {
         title:"Quality Services",
@@ -89,10 +94,10 @@ const aboutus = () => {
                 our clients reach the top.
               </p>
               <div className="about-btn mt-[30px] flex flex-col sm:flex-row justify-center gap-8">
-                <Button variant="Dark" className="">
+                <Button variant="Dark" className="" onClick={()=>setModalActive(true)}>
                   Let's Get Started
                 </Button>
-                <Button variant="Green">Consult An Expert</Button>
+                <Button variant="Green" >Consult An Expert</Button>
               </div>
             </div>
 
@@ -158,6 +163,7 @@ const aboutus = () => {
       <Footer />
 
       <CopyRightBar />
+      <MyModal />
       
     </>
   );

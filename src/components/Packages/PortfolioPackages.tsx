@@ -10,11 +10,14 @@ import GetStarted from "../GetStarted";
 import Testimonials from "../Testimonials";
 import Footer from "../Footer";
 import CopyRightBar from "../CopyRightBar";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 
 const PortfolioPackages = () => {
   const [active, setActive] = useState("");
   const [filterCards, setFilterCards] = useState(null);
   const [filterImages, setFilterImages] = useState(null);
+
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
 
   useEffect(() => {
     setFilterCards(packages);
@@ -84,7 +87,7 @@ const PortfolioPackages = () => {
       </div>
       <div className="portfolio-cta border-b border-[#00000045] py-[30px] text-center lg:py-[50px]">
         <div className="about-btn flex flex-col sm:flex-row items-center justify-center gap-8">
-          <Button variant="Dark" className="">
+          <Button variant="Dark" className="" onClick={()=>setModalActive(true)}>
             Let's Get Started
           </Button>
           <Button variant="Green">Consult An Expert</Button>

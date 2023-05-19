@@ -7,12 +7,17 @@ import GetStarted from "~/components/GetStarted";
 import Header from "~/components/Header/Header";
 import InfoSec from "~/components/InfoSec";
 import MainHeading from "~/components/MainHeading";
+import MyModal from "~/components/MyModal";
 import ServicesContact from "~/components/ServicesContact";
 import ServicesSlider from "~/components/Slider/ServicesSlider";
 import ThumbsSlider from "~/components/Slider/ThumbsSlider";
 import Testimonials from "~/components/Testimonials";
+import useRQGlobalState from "~/utils/useRQGlobalState";
 
 const webdevelopment = () => {
+  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
+
+  
   const infoSecData = [
     {
         title:"Exceptional Service",
@@ -131,6 +136,7 @@ const webdevelopment = () => {
         <Testimonials />
         <Footer />
         <CopyRightBar />
+        <MyModal />
     </>
   );
 };
