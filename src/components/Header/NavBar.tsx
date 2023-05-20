@@ -2,11 +2,11 @@ import React, { FC,useState,useEffect } from 'react'
 import { BiChevronDown } from 'react-icons/bi';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
-import classNames from 'classnames';
 import navlinks from '~/data/navlinks';
 import MobileMenu from './MobileMenu';
 import Button from '../ui/Button';
 import useRQGlobalState from '~/utils/useRQGlobalState';
+import CollisionButton from '../ui/CollisionButton';
 
 const NavBar: FC = () => {
 
@@ -31,13 +31,15 @@ const NavBar: FC = () => {
 
 
 
-    <NavigationMenu.Root className={`menu-wrapper flex items-center justify-between px-3 text-white h-20 border-b ${color ? "bg-black" : "bg-transparent"}`}>
-      <div className="logo h-full flex items-center w-[150px] sm:w-[200px] lg:w-auto">
+    <NavigationMenu.Root className={`menu-wrapper flex items-center justify-between px-3 text-white h-20 border-b ${color ? "bg-[#00000070]" : "bg-transparent"}`}>
+      <div className="logo h-full flex items-center w-[150px] sm:w-[200px] xl:w-auto">
         <Link href={"/"}>
           <img src="/logo-trans.png" alt="Ecommerce Inside Logo" />
         </Link>
       </div>
-      <NavigationMenu.List className="hidden md:flex  center flex flex-row gap-3 list-none h-[80px] items-center">
+
+      <div className="CTA flex items-center gap-8">
+      <NavigationMenu.List className="hidden 2xl:flex  center flex-row gap-5 list-none h-[80px] items-center">
 
         {
           navlinks?.map((navlink) => (
@@ -45,7 +47,7 @@ const NavBar: FC = () => {
               {
                 navlink.sublinks ? (
                   <NavigationMenu.Item className='hover:text-caribbeangreen flex  items-center h-full' key={navlink.name}>
-                    <NavigationMenu.Trigger className="h-full group flex select-none items-center gap-[2px]  leading-none outline-none">
+                    <NavigationMenu.Trigger className="h-full group flex select-none items-center   leading-none outline-none">
                       <Link href={navlink.link}>
                         {navlink.name}
                       </Link>
@@ -55,13 +57,13 @@ const NavBar: FC = () => {
                       />
                     </NavigationMenu.Trigger>
 
-                    <NavigationMenu.Content className="absolute top-20 bg-white min-w-[250px] rounded-md animate-fade-in-down">
-                      <ul className="m-0  list-none gap-x-[10px] p-3  flex gap-2 flex-col">
+                    <NavigationMenu.Content className="absolute top-20 bg-white min-w-[250px] animate-fade-in-down">
+                      <ul className="m-0  list-none  flex flex-col">
            
 
                         {
                           navlink.sublinks?.map((subnavlink) => (
-                            <li className='text-darkblue hover:text-white hover:bg-darkblue p-2' key={subnavlink.name}>
+                            <li className='text-darkblue hover:text-white hover:bg-darkblue p-4  border-b border-black' key={subnavlink.name}>
                               <Link href={subnavlink.link} >
                                 {subnavlink.name}
                               </Link>
@@ -84,9 +86,8 @@ const NavBar: FC = () => {
           ))
         }
       </NavigationMenu.List>
-
-      <div className="CTA flex items-center gap-4">
-        <Button variant='Dark' onClick={()=>setModalActive(true)}>Request Info</Button>
+        {/* <Button variant='Dark' onClick={()=>setModalActive(true)}>Request Info</Button> */}
+        <CollisionButton variant='Dark' onClick={()=>setModalActive(true)}>Request Info</CollisionButton>
         <MobileMenu />
       </div>
     </NavigationMenu.Root>

@@ -28,7 +28,7 @@ const ServicePackages = () => {
     return (
         <div className="wrapper ">
             {/* Categories Buttons */}
-            <div className="flex items-center justify-center  mb-10  flex-wrap ">
+            <div className="flex items-center justify-center  gap-[20px]  flex-wrap mb-[30px]">
                 {packageCatagories.map((item, id) => {
                     return (
                         <button
@@ -36,7 +36,7 @@ const ServicePackages = () => {
                             key={id}
                             value={item.name}
                             className={`${active === item.name ? " text-white border-2 border-darkblue bg-caribbeangreen" : "bg-white"
-                                }  px-5 py-3 flex items-center justify-center border-2 border-caribbeangreen hover:border-gray-300 rounded-t-md m-6 cursor-pointer  p-2"`}
+                                }  px-5 py-[8px] flex items-center justify-center border-2 border-caribbeangreen hover:border-gray-300 rounded-t-md  cursor-pointer  p-2"`}
                         >
                             {item.name}
                         </button>
@@ -46,7 +46,7 @@ const ServicePackages = () => {
 
 
             {/* Package Cards */}
-            <div className="grid  lg:grid-cols-3 gap-5">
+            <div className="grid  grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-[15px] px-[20px] md:px-[150px] lg:px-[20px] 2xl:px-[100px]">
                 {filterCards &&
                     filterCards.map((data, id) => {
                         return (

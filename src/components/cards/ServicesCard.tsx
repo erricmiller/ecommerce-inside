@@ -4,7 +4,7 @@ import React, { FC } from 'react'
 const ServicesCard: FC = ({ service }) => {
     return (
         // <div className={`bg-[url('/service-img-2.webp')] bg-cover bg-no-repeat bg-center relative px-9 flex flex-col h-[385px]  justify-center border group`}>
-        <div  className={`bg-[url('/service-img-2.webp')] bg-cover bg-no-repeat bg-center relative px-9 flex flex-col h-[385px]  justify-center border group`}  style={{backgroundImage:`url(${service.img})`}}>
+        <div  className={`bg-[url('/service-img-2.webp')] bg-cover bg-no-repeat bg-center relative flex flex-col h-[385px]  justify-center border group px-[15px] md:px-[50px]`}  style={{backgroundImage:`url(${service.img})`}}>
             <div className=' group-hover:hidden flex flex-col'>
                 <img src={service.icon} alt="" className='pb-[15px] h-[54px] w-[50px] ' />
                 <h3 className='text-h4 md:text-base2 text-white font-bold pb-[20px]'>{service.title}</h3>

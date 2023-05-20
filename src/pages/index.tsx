@@ -15,100 +15,242 @@ import Testimonials from "~/components/Testimonials";
 import Expertise from "~/components/Expertise";
 import Agencies from "~/components/Agencies";
 import useRQGlobalState from "~/utils/useRQGlobalState";
+import FluidContainer from "~/components/ui/FluidContainer";
+import Container from "~/components/ui/Container";
+import Heading2 from "~/components/ui/Heading2";
+import Paragraph from "~/components/ui/Paragraph";
+import CollisionButton from "~/components/ui/CollisionButton";
+import ServicesCardsSlider from "~/components/Slider/ServicesCardsSlider";
 
 const Home: NextPage = () => {
-  const [modalActive,setModalActive] = useRQGlobalState('modal',false);
+  const [modalActive, setModalActive] = useRQGlobalState("modal", false);
   return (
     <>
       <Head>
         <title>Ecommerce Inside</title>
-        <meta name="description" content="Ecommerce Inside is a full-service digital solutions agency based in USA specializing in branding designs, Software, Mobile Apps, Webs, & Marketing Solutions." />
+        <meta
+          name="description"
+          content="Ecommerce Inside is a full-service digital solutions agency based in USA specializing in branding designs, Software, Mobile Apps, Webs, & Marketing Solutions."
+        />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css" />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=Poppins"
+          rel="stylesheet"
+        />
       </Head>
       <main className="overflow-hidden">
         <Header />
         <HeroSlider />
-        <section className="bg-white flex flex-col items-center justify-center py-16 px-[15px] sm:px-[65px]">
-          <img src="/tg-icon.jpg" alt="" className=" rounded-full border-[5px] border-caribbeangreen animate-grow-shrink" />
-          <div className="flex flex-col items-center mt-6 mb-[25px]">
-            <h2 className="text-black text-h2 animate-fade-in-up text-center lg:text-left">The Best Digital Marketing Company in UAE</h2>
-            <h2 className="text-caribbeangreen text-h2 animate-fade-in-up text-center lg:text-left">An Incredible Intersection of Creativity and Tech</h2>
-          </div>
-          <p className="text-black text-p animate-fade-in-up text-center">A full service digital marketing platform that caters to every scope from marketing to the brand building along with a wide range of latest IT solutions. We are rated as USA’s best digital marketing agency for our swift deliveries and professionalism. We are a bunch of creative minds who think alike to make marketing goals and dreams come true. Our experts have over decades of industry experience as well as expertise. Ecommerce Inside devises strategies and methodologies that make your brand stand out among others. With complete hands-on experience in web development, design, brand building, content optimization. We’ll upscale your sales, digital presence, and leads. So what are you waiting for? Contact us today for a consultation on how we can help you with all your digital needs & make it count with the top digital marketing companies in the UAE.</p>
-          <div className="flex md:flex-row flex-col items-center gap-10 mt-6">
-            <Button variant='Dark' className="" onClick={()=>setModalActive(true)}>Let's Get Your Project Started</Button>
-            <Button variant='Green' className="">Talk To Our Expert For Free</Button>
-          </div>
+
+        <section className="flex flex-col items-center justify-center bg-white py-[60px]">
+          <FluidContainer>
+            <div className="about-wrap flex flex-col items-center justify-center lg:px-[30px] lg:pb-[30px] 2xl:px-[70px] 2xl:pb-[40px] 4xl:px-[100px] 4xl:pb-[60px] ">
+              <img
+                src="/tg-icon.jpg"
+                alt=""
+                className=" w-[20%] animate-grow-shrink rounded-full border-[5px] border-caribbeangreen xl:w-[30%] 2xl:w-[20%] 4xl:w-[10%]"
+              />
+              <div className=" mb-[18px] mt-6 flex flex-col items-center 3xl:mb-[25px]">
+                <Heading2 className="animate-fade-in-up text-center font-bold">
+                  The Best Digital Marketing Company in UAE
+                </Heading2>
+                <Heading2 className="animate-fade-in-up text-center font-bold text-caribbeangreen  ">
+                  An Incredible Intersection of Creativity and Tech
+                </Heading2>
+              </div>
+              <Paragraph className="animate-fade-in-up text-center">
+                A full service digital marketing platform that caters to every
+                scope from marketing to the brand building along with a wide
+                range of latest IT solutions. We are rated as USA’s best digital
+                marketing agency for our swift deliveries and professionalism.
+                We are a bunch of creative minds who think alike to make
+                marketing goals and dreams come true. Our experts have over
+                decades of industry experience as well as expertise. Ecommerce
+                Inside devises strategies and methodologies that make your brand
+                stand out among others. With complete hands-on experience in web
+                development, design, brand building, content optimization. We’ll
+                upscale your sales, digital presence, and leads. So what are you
+                waiting for? Contact us today for a consultation on how we can
+                help you with all your digital needs & make it count with the
+                top digital marketing companies in the UAE.
+              </Paragraph>
+            </div>
+            <div className="mt-6 flex flex-col items-center gap-10 md:flex-row">
+              <CollisionButton
+                variant="Dark"
+                onClick={() => setModalActive(true)}
+              >
+                Let's Get Your Project Started
+              </CollisionButton>
+              <CollisionButton
+                variant="Green"
+                onClick={() => setModalActive(true)}
+              >
+                Talk To Our Expert For Free
+              </CollisionButton>
+            </div>
+          </FluidContainer>
         </section>
 
-        
-        <section className="bg-white flex flex-col items-center justify-center py-16 px-[15px] sm:px-[65px] w-[75%] mx-auto">
-          <h2 className="text-black text-h2 font-bold  animate-fade-in-up text-center lg:text-left">Ecommerce Inside Plans & Pricing</h2>
-          <h4 className="text-gray-500 text-h4 animate-fade-in-up text-center lg:text-left">Affordable Price Packages</h4>
+        <section className="mx-auto flex flex-col items-center justify-center bg-white pb-[50px]">
+          <Container>
+            <h2 className="pb-[15px] text-center text-[28px] font-bold lg:pb-[20px] 2xl:text-[28px] 2xl:leading-[34px] 3xl:text-[30px] 3xl:leading-[36px] 4xl:text-[34px] 4xl:leading-[38px] 5xl:text-[38px] 5xl:leading-[42px] 6xl:text-[42px] 6xl:leading-[48px] ">
+              Ecommerce Inside Plans & Pricing
+            </h2>
+            <h4 className="animate-fade-in-up text-center font-poppins text-[14px] font-normal leading-[20px] text-gray-500 md:text-[16px] md:leading-[22px] lg:text-[18px] lg:leading-[24px] xl:text-[22px] xl:leading-[28px] 2xl:text-[24px] 2xl:leading-[30px] 3xl:text-[26px] 3xl:leading-[32px] 4xl:text-[30px] 4xl:leading-[34px] 5xl:text-[34px] 5xl:leading-[38px] 6xl:text-[38px] 6xl:leading-[44px]">
+              Affordable Price Packages
+            </h4>
+          </Container>
           <ServicePackages />
         </section>
-        {/* <Packages /> */}
 
-        <section className=" bg-white  py-16 px-[15px] smpx-[65px] border-y border-[#ccc]">
+        <section className="   border-y border-[#ccc] bg-white py-[20px] lg:px-[20px] 2xl:py-[50px] 5xl:pb-[70px]">
           <ProjectSlider />
         </section>
 
+        <section className=" flex flex-col items-center justify-center bg-white py-[30px] lg:py-[50px] 4xl:py-[82px] ">
+          {/* <div className="px-[15px]">
+            
+          </div> */}
+          <Container>
+            <div className="mx-auto lg:w-[80%]">
+              <h2 className="pb-[5px] text-center text-[16px]  text-[#666] md:text-[20px] 2xl:text-[24px] ">
+                Upscale and Leverage Brand Growth{" "}
+              </h2>
+              <h2 className="pb-[9px] text-center text-[22px] font-extrabold text-[#1b1037] lg:text-[30px] xl:text-[40px] ">
+                With the Digital Marketing Company in USA{" "}
+              </h2>
+              <p className="sxl:text-[18px] text-center text-[13px] text-[#666] lg:text-[14px] xl:text-[16px] 4xl:text-[20px]">
+                Allow us to take your brand to new heights with the ultra modern
+                marketing strategies and improve your brand’s digital
+                visibility. Our professionals with decades of experience and
+                marketing expertise can change the game in a snap.{" "}
+              </p>
+            </div>
+          </Container>
+          <div className=" grid grid-cols-1  lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3  4xl:grid-cols-4">
+            <div className="services-card-slider xl:hidden">
+              <ServicesCardsSlider data={ServicesData} />
+            </div>
+            </div>
 
-        <section className=" bg-white flex flex-col items-center justify-center py-16 ">
-          <div className="px-[15px]">
 
-          <h2 className="text-h2 text-center text-gray-500">Upscale and Leverage Brand Growth </h2>
-          <h2 className="text-h2 text-center font-extrabold text-black">With the Digital Marketing Company in USA </h2>
-          <p className="text-p text-center text-gray-700 text-center mb-[40px]">Allow us to take your brand to new heights with the ultra modern marketing strategies and improve your brand’s digital visibility. Our professionals with decades of experience and marketing expertise can change the game in a snap. </p>
-          </div>
-          <div className=" xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 md:grid ">
-            <div className={`bg-caribbeangreen bg-center  px-9 flex flex-col h-[385px]  justify-center border `}>
-              <div className=' group-hover:hidden flex flex-col'>
-                <h3 className='text-h3 text-white font-bold '>Our Services</h3>
-                <p className=' text-white text-sm pt-1 leading-[20px]'>Ecommerce Inside is on a mission to bring a revolution in the IT and marketing domain with up-to-date technology, tools, strategy, and approach. Our dedicated teams understand the industry and audience requirements. We help you come forward and up your brand’s game.</p>
-                <a href="#" className='text-white text-sm hover:text-black uppercase'>CHECK OUT OUR SERVICES HERE </a>
+            <div className="hidden xl:grid  xl:grid-cols-2 2xl:grid-cols-3  4xl:grid-cols-4">
+
+            <div
+              className={`flex h-[385px]  flex-col justify-center border bg-caribbeangreen  bg-center px-[15px] md:px-[50px]`}
+            >
+              <div className=" flex flex-col group-hover:hidden">
+                <h3 className="text-h3 font-bold text-white ">Our Services</h3>
+                <p className=" pt-1 text-sm leading-[20px] text-white">
+                  Ecommerce Inside is on a mission to bring a revolution in the
+                  IT and marketing domain with up-to-date technology, tools,
+                  strategy, and approach. Our dedicated teams understand the
+                  industry and audience requirements. We help you come forward
+                  and up your brand’s game.
+                </p>
+                <a
+                  href="#"
+                  className="text-sm uppercase text-white hover:text-black"
+                >
+                  CHECK OUT OUR SERVICES HERE{" "}
+                </a>
               </div>
             </div>
-            {ServicesData.map((service,index) => (
+            {ServicesData.map((service, index) => (
               <ServicesCard service={service} key={index} />
             ))}
           </div>
+          
+
+          <Container>
+            <div className="my-[30px]  flex items-center justify-center">
+              <h3 className="mx-auto flex items-center justify-center font-extrabold  text-darkblue text-[18px] xl:text-[25px] 4xl:text-[37px]">
+                Hire{" "}
+                <img
+                  src="/service-cta-icon.png"
+                  alt="cta icon"
+                  className="w-[8%] animate-grow-shrink p-[8px] "
+                />
+                and Grow your Brand with your next Design/Development Project.
+              </h3>
+            </div>
+          </Container>
         </section>
 
-
-        <section className=" bg-white flex flex-col items-center justify-center py-[50px] px-[120px]  ">
-          <div className="flex  justify-center">
-            <h3 className="flex items-center text-[18px] md:text-[25px] lg:text-[37px] justify-center font-extrabold text-darkblue mx-auto">Hire  <img src="/service-cta-icon.png" alt="cta icon" className="p-[8px] w-[8%] animate-grow-shrink " />and Grow your Brand with your next Design/Development Project.</h3>
-          </div>
-        </section>
-
-
-        <section className=" bg-[url('/combo_bg.jpg')] bg-cover bg-no-repeat bg-center py-[100px]">
-          <div className="container max-w-[540px] md:max-w-[960px] lg:max-w-[1140px] mx-auto px-[15px]  relative">
-            <div className="combo_offer_row lg:pr-[50%]">
-              <div className="combo_image hidden md:block absolute top-[50%] right-[4%] max-w-[50%] -translate-y-2/4">
-                <img src="/combo_offer.webp" alt="" className="max-w-[130%] h-auto" />
+        <section className=" bg-[url('/combo_bg.jpg')] bg-cover bg-center bg-no-repeat py-[100px]">
+          <div className="container relative mx-auto max-w-[540px] px-[15px]  lg:max-w-[540px] xl:max-w-[720px] 3xl:max-w-[1140px]">
+            <div className="combo_offer_row flex flex-col-reverse lg:pr-[50%]">
+              <div className="combo_image absolute right-[4%] top-[50%] hidden max-w-[50%] -translate-y-2/4 lg:block">
+                <img
+                  src="/combo_offer.webp"
+                  alt=""
+                  className="h-auto max-w-[130%]"
+                />
               </div>
               <div className="combo_offer_content">
-                <h3 className="text-white font-bold text-[30px] mb-[30px]">Business Setup<br /> All-in-One Package</h3>
-                <p className="text-base md:[22px] mb-[10px] text-caribbeangreen uppercase">WE UNDERSTAND WHAT’S BEST FOR YOUR BUSINESS</p>
-                <p className="text-base lg:text-[18px] text-white">Ecommerce Inside offers branding solutions to expand your reach and establish an online presence. Our combo packages fit for companies that strive for success & cover everything you need to run your business successfully.</p>
+                <h3 className="mb-[30px] text-[30px] font-bold text-white xl:text-[50px] ">
+                  Business Setup
+                  <br /> All-in-One Package
+                </h3>
+                <p className=" mb-[10px] uppercase text-caribbeangreen tracking-[0.5px] text-[16px] xl:text-[22px] ">
+                  WE UNDERSTAND WHAT’S BEST FOR YOUR BUSINESS
+                </p>
+                <p className="text-white mb-[15px] text-[16px] ">
+                  Ecommerce Inside offers branding solutions to expand your
+                  reach and establish an online presence. Our combo packages fit
+                  for companies that strive for success & cover everything you
+                  need to run your business successfully.
+                </p>
                 <div className="row links flex flex-wrap">
                   <div className="col-lg-6">
-                    <ul className="columns-1 md:columns-2 md:text-[16px] text-white mb-5">
-                      <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>Logo Design</li>
-                      <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>Stationery Design</li>
-                      <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>Website Design</li>
-                      <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>Cup Design</li>
-                      <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>Banner Design</li>
-                      <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>Social Media Design</li>
-                      <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>Brand Guide</li>
-                      <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>T-shirt Design</li>
-                      <li className="mb-[10px]"><span className="before:content-['\2714\0020'] listTickColor"></span>Newsletter Design</li>
-
+                    <ul className="mb-5 columns-1 text-white md:columns-2 md:text-[16px]">
+                      <li className="mb-[10px]">
+                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        Logo Design
+                      </li>
+                      <li className="mb-[10px]">
+                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        Stationery Design
+                      </li>
+                      <li className="mb-[10px]">
+                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        Website Design
+                      </li>
+                      <li className="mb-[10px]">
+                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        Cup Design
+                      </li>
+                      <li className="mb-[10px]">
+                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        Banner Design
+                      </li>
+                      <li className="mb-[10px]">
+                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        Social Media Design
+                      </li>
+                      <li className="mb-[10px]">
+                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        Brand Guide
+                      </li>
+                      <li className="mb-[10px]">
+                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        T-shirt Design
+                      </li>
+                      <li className="mb-[10px]">
+                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        Newsletter Design
+                      </li>
                     </ul>
-                    <Button variant="Dark" onClick={()=>setModalActive(true)}>Let's Get started</Button>
+                    <Button variant="Dark" onClick={() => setModalActive(true)}>
+                      Let's Get started
+                    </Button>
+                    <CollisionButton variant="Dark" onClick={() => setModalActive(true)}>
+                      Let's Get started</CollisionButton>
                   </div>
                 </div>
               </div>
@@ -116,22 +258,15 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-
-       
         <Agencies />
-
 
         <Expertise />
 
-
         <GetStarted />
 
-        
         <Testimonials />
 
-
         <Footer />
-
 
         <CopyRightBar />
 
@@ -142,5 +277,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-

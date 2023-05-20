@@ -1,8 +1,227 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+@layer base {
+  a {
+    @apply text-[16px];
+    @apply leading-[24px];
+    @apply font-normal;
+  }
+  span {
+    @apply text-[14px];
+    @apply leading-[18px];
+    /* @apply text-[#909090]; */
+    @apply font-normal;
+  }
+}
+
+body {
+  font-family: "Poppins";
+}
+
+:root {
+  --dark-blue: #201949;
+  --black: #000;
+  --white: #fff;
+  --caribbeangreen: #00e2a1;
+}
+
+a.collision {
+  text-decoration: none;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  display: block;
+  width: fit-content;
+  overflow: hidden;
+  line-height: 24px;
+  text-align: center;
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+a.collision::before,
+a.collision::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: var(--dark-blue);
+  top: 50%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+a.collisionDark {
+  text-decoration: none;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  display: block;
+  width: fit-content;
+  overflow: hidden;
+  line-height: 24px;
+  text-align: center;
+  position: relative;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+a.collisionDark::before,
+a.collisionDark::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: var(--dark-blue);
+  top: 50%;
+  border-radius: 50%;
+  z-index: -1;
+}
+a.collisionWhite {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-family: "Poppins", sans-serif;
+  display: block;
+  width: fit-content;
+  overflow: hidden;
+  line-height: 24px;
+  text-align: center;
+  position: relative;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+a.collisionWhite:hover {
+  color: var(--white);
+}
+
+a.collisionWhite::before,
+a.collisionWhite::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: var(--dark-blue);
+  color: var(--white);
+  top: 50%;
+  border-radius: 50%;
+  z-index: -1;
+}
+a.collisionGreen {
+  text-decoration: none;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  display: block;
+  width: fit-content;
+  overflow: hidden;
+  line-height: 24px;
+  text-align: center;
+  position: relative;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+a.collisionGreen::before,
+a.collisionGreen::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: var(--caribbeangreen);
+  top: 50%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+a.collision::before {
+  transform: translate(-50%, -50%);
+  left: -20px;
+}
+
+a.collision::after {
+  transform: translate(50%, -50%);
+  right: -20px;
+}
+
+a.collision:hover::before {
+  animation: move-left 0.8s both;
+  animation-direction: alternate;
+}
+a.collision:hover::after {
+  animation: move-right 0.8s both;
+  animation-direction: alternate;
+}
+
+@keyframes move-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 50%;
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@keyframes move-right {
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    right: 50%;
+    height: 400px;
+    width: 400px;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 24px !important;
+  height: 24px !important;
+  display: inline-block;
+  border: 5px;
+  border-color: white !important;
+  background: var(--swiper-pagination-bullet-inactive-color, #a3a3a3) !important;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 1) !important;
+}
+.swiper-pagination-bullet:hover {
+  width: 24px !important;
+  height: 24px !important;
+  display: inline-block;
+  border: 5px;
+  border-color: white !important;
+  background: var(--caribbeangreen) !important;
+}
+
+.swiper-pagination-bullet-active {
+  /* --swiper-theme-color: var(--caribbeangreen) !important; */
+  width: 24px !important;
+  height: 24px !important;
+  display: inline-block;
+  border: 5px;
+  border-color: white !important;
+  background: var(--swiper-pagination-bullet-inactive-color, #00e2a1) !important;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 1) !important;
+}
 
 
+
+/* .swiper-pagination-bullet {
+  --swiper-theme-color: #ebeaea;
+} */
+
+/* 
 :root {
     --carribeanGreen: #00E2A1;
     --white: #fff;
@@ -101,11 +320,6 @@ button.btn {
     }
   }
    */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --carribeanGreen: #00e2a1;
   --white: #fff;
@@ -453,6 +667,6 @@ left: 50% !important;
 }
 
 .arrowedList:before {
-  content: '\27A4';
+  content: "\27A4";
   margin-right: 11px;
 }

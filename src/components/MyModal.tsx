@@ -53,7 +53,7 @@ const MyModal: FC = () => {
               <form id="Get Started">
               <div className="form-group">
                   <label>Email Address</label>
-                  <input type="email" className="form-control input-lg w-full sm:w-auto" placeholder="Enter Your Email Address" size={28}/>
+                  <input type="email" className="form-control input-lg w-full " placeholder="Enter Your Email Address" size={50}/>
                 </div>
                 <input type="submit"  value={"Let's Get Started"}/>
               </form>

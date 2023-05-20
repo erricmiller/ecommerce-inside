@@ -10,7 +10,7 @@ const MobileMenu: FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <>
-      <div className={`${mobileMenuOpen ? ("bg-caribbeangreen text-white absolute top-2 right-2") : ("bg-white text-darkblue")} z-20 w-[40px] h-[40px] flex items-center justify-center rounded-full md:hidden cursor-pointer hover:scale-90 duration-100`} onClick={(e) => setMobileMenuOpen(!mobileMenuOpen)}>
+      <div className={`${mobileMenuOpen ? ("bg-caribbeangreen text-white absolute top-2 right-2") : ("bg-white text-darkblue")} z-20 w-[40px] h-[40px] flex items-center justify-center rounded-full  cursor-pointer hover:scale-90 duration-100`} onClick={(e) => setMobileMenuOpen(!mobileMenuOpen)}>
         {mobileMenuOpen ? (
           <IoClose size={18} className='' />
         ) : (
@@ -20,35 +20,7 @@ const MobileMenu: FC = () => {
 
       {
         mobileMenuOpen && (
-          <nav className='bg-white md:hidden text-darkblue z-10 absolute h-[100vh] w-[100vw] top-0 left-0 overflow-hidden p-5'>
-            {/* <ul>
-              {
-                navlinks.map((navlink) => (
-                  <>
-                    {
-                      navlink.sublinks ? (
-                        <li key={navlink.name} className='hover:text-caribbeangreen flex items-center gap-3 my-4 cursor-pointer'>
-                          <Link href={navlink.link}>
-                            {navlink.name}
-                          </Link>
-                          <BiChevronDown
-                            className="text-violet10 relative transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
-                            aria-hidden
-                          />
-                        </li>
-                      ) : (
-                        <li key={navlink.name} className='hover:text-caribbeangreen flex items-center gap-3 my-4 cursor-pointer'>
-                          <Link href={navlink.link}>
-                            {navlink.name}
-                          </Link>
-                        </li >
-                      )
-                    }
-                  </>
-
-                ))
-              }
-            </ul> */}
+          <nav className='bg-white  text-darkblue z-10 absolute h-[100vh] w-[100vw] top-0 left-0 overflow-hidden p-5'>
 
             <div className="my-6">
               <ul className='flex flex-col items-center h-full my-auto'>
@@ -57,7 +29,7 @@ const MobileMenu: FC = () => {
                     <>
                       {
                         navlink.sublinks?.map((sublink) => (
-                          <li key={sublink.name} className='animate-fade-in-down hover:text-caribbeangreen flex justify-center  text-h4 my-4 cursor-pointer'>
+                          <li key={sublink.name} className='animate-fade-in-down hover:text-caribbeangreen flex justify-center font-bold  text-[36px] my-4 cursor-pointer'>
                             <Link href={sublink.link}>
                               {sublink.name}
                             </Link>

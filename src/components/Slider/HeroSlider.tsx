@@ -1,14 +1,19 @@
-import React, { FC } from "react";
+import React, { FC,useState } from "react";
 import TwinColSliderData from "~/data/TwinColSliderData";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import SwiperCore, { Autoplay, Navigation } from "swiper";
+import SwiperCore, { Autoplay, Navigation,Pagination,A11y } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import Button from "../ui/Button";
 import useRQGlobalState from "~/utils/useRQGlobalState";
+import Heading1 from "../ui/Heading1";
+import Paragraph from "../ui/Paragraph";
+import CollisionButton from "../ui/CollisionButton";
+import 'swiper/css/pagination';
 
 const HeroSlider: FC = () => {
   const [modalActive,setModalActive] = useRQGlobalState('modal',false);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const slides = [
     {
       title: "Top Tier Digital Marketing Agency in Pakistan",
@@ -22,7 +27,7 @@ const HeroSlider: FC = () => {
     },
   ];
 
-  SwiperCore.use([Autoplay]);
+  SwiperCore.use([Autoplay,Pagination,A11y]);
   const swiper = useSwiper();
 
   return (
@@ -32,22 +37,22 @@ const HeroSlider: FC = () => {
       autoplay={{
         delay: 5000,
       }}
-      className=""
+      pagination={{ clickable: true }}
+      className="heroSlider"
     >
       {slides.map((data, index) => (
         <SwiperSlide
           key={index}
           style={{ backgroundImage: `url(${data.url})` }}
         >
-          <div className="flex items-center py-[250px] ">
-            <div className=" w-[85%] sm:w-[80%]  rounded-br-[200px] bg-transparent bg-[url('/banner-slide-img.webp')] bg-cover pb-[50px] pl-[8px]  sm:pl-[40px] pr-[40px] pt-[50px] md:w-[60%] md:px-[50px] md:py-[40px] lg:w-[40%] lg:px-[70px] xl:py-[90px]">
-              <h1 className=" pb-[10px] text-[20px] font-bold leading-[30px] text-white md:pb-[5px] md:text-[18px] md:leading-[23px] lg:pb-[10px] lg:text-[34px] lg:leading-[40px] xl:pb-[15px] xl:text-[42px] xl:leading-[50px]">
-                {data.title}
-              </h1>
-              <p className="text-[14px] text-white md:text-[12px] lg:text-[14px] lg:pb-[20px] xl:pb-[35px] xl:text-[17px]">
-                {data.desc}
-              </p>
-              <Button variant="Green" onClick={()=>setModalActive(true)}>Request Quote For Free</Button>
+          <div className="flex items-center py-[250px] h-[85vh] 4xl:h-[90vh] 5xl:h-[100vh]">
+            <div className=" w-[80%] xl:w-[50%] 3xl:w-[40%] rounded-br-[200px] bg-transparent bg-[url('/banner-slide-img.webp')] bg-cover  pl-[30px] pr-[30px] 3xl:pl-[30px] 3xl:pr-[50px] py-[50px] 3xl:py-[90px]">
+
+              <Heading1  className="text-white pb-[5px] 2xl:pb-[10px] 4xl:pb-[20px]">{data.title}</Heading1>
+              <Paragraph className="text-white">{data.desc}</Paragraph>
+              <div className="banner-btn hidden md:block mt-[20px] 4xl:mt-[30px]">
+              <CollisionButton variant="Green"  onClick={()=>setModalActive(true)}>Request Quote For Free</CollisionButton>
+              </div>
             </div>
           </div>
         </SwiperSlide>
