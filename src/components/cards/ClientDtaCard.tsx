@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ClientDtaCard = ({ data }) => {
+const ClientDtaCard = ({ data }:any) => {
     return (
         <div  className={` bg-cover bg-no-repeat items-center bg-center relative flex flex-col   justify-center border group`}>
         <img src={data.bgIMG} alt="" className='object-cover'/>

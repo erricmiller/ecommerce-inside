@@ -27,7 +27,7 @@ const ProjectSlider: FC = () => {
         slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 2000,
+          delay: 5000,
         }}
         id=" relative"
         navigation={{ prevEl, nextEl }}
@@ -39,16 +39,17 @@ const ProjectSlider: FC = () => {
         {TwinColSliderData.map((data, index) => (
           <SwiperSlide key={index}>
             <div className="flex flex-col gap-7 px-[0px] sm:px-[50px] lg:flex-row">
-              <div className="slider-data lg:w-[50%] ">
-                <h3 className="pb-[10px] text-[15px] font-bold text-[#302839] xl:pb-[13px] xl:text-[20px] 2xl:pb-[20px] 2xl:text-[24px]">
+              <div className="slider-data lg:w-[50%] flex flex-col justify-center">
+                <h2 className="  font-bold text-[#302839] sec_heading'">
+                {/* <h2 className="pb-[10px] text-[15px] font-bold text-[#302839] xl:pb-[13px] xl:text-[20px] 2xl:pb-[20px] 2xl:text-[24px]"> */}
                   PROJECT
-                </h3>
+                </h2>
 
-                <h4 className="pb-[8px]  text-[14px] text-[#13101a] lg:pb-[10px] lg:text-[17px] 3xl:pb-[35px] 3xl:text-[20px]">
+                <h4 className="pb-[36px]  text-[14px] text-[#13101a]  lg:text-[17px] 3xl:text-[20px]">
                   {data.projectType}
                 </h4>
 
-                <h2 className="pb-[13px] text-[27px] font-bold text-[#13101a] lg:pb-[16px] lg:text-[33px] 3xl:pb-[35px] 3xl:text-[50px]">
+                <h2 className=" text-[27px] font-bold text-[#13101a]  lg:text-[33px]  3xl:text-[50px]">
                   {data.projectName}
                 </h2>
 

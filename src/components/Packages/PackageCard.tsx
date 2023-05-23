@@ -25,7 +25,7 @@ const PackageCard: FC = ({ info }) => {
                 <ul>
                     {
                         info.points.map((point) => (
-                            <li className=' text-[12px] group-hover:text-white mb-[5px] '>{point}</li>
+                            <li className=' text-[12px] group-hover:text-white mb-[5px] ' key={point}>{point}</li>
                         ))
                     }
                 </ul>

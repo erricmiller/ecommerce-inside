@@ -48,7 +48,7 @@ const HeroSlider: FC = () => {
           <div className="flex items-center py-[250px] h-[85vh] 4xl:h-[90vh] 5xl:h-[100vh]">
             <div className=" w-[80%] xl:w-[50%] 3xl:w-[40%] rounded-br-[200px] bg-transparent bg-[url('/banner-slide-img.webp')] bg-cover  pl-[30px] pr-[30px] 3xl:pl-[30px] 3xl:pr-[50px] py-[50px] 3xl:py-[90px]">
 
-              <Heading1  className="text-white pb-[5px] 2xl:pb-[10px] 4xl:pb-[20px]">{data.title}</Heading1>
+              <h1 className="text-white pb-[5px] 2xl:pb-[10px] 4xl:pb-[20px] text-[20px] font-bold leading-[26px] md:text-[22px] md:leading-[28px] lg:text-[24px] lg:leading-[30px] xl:text-[28px] xl:leading-[34px] 2xl:text-[30px] 2xl:leading-[36px] 3xl:text-[32px] 3xl:leading-[38px] 4xl:text-[36px] 4xl:leading-[40px] 5xl:text-[40px] 5xl:leading-[45px] 6xl:text-[45px] 6xl:leading-[50px]">{data.title}</h1>
               <Paragraph className="text-white">{data.desc}</Paragraph>
               <div className="banner-btn hidden md:block mt-[20px] 4xl:mt-[30px]">
               <CollisionButton variant="Green"  onClick={()=>setModalActive(true)}>Request Quote For Free</CollisionButton>

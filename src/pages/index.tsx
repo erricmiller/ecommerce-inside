@@ -33,20 +33,18 @@ const Home: NextPage = () => {
           content="Ecommerce Inside is a full-service digital solutions agency based in USA specializing in branding designs, Software, Mobile Apps, Webs, & Marketing Solutions."
         />
         <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet"
-          href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Poppins"
-          rel="stylesheet"
-        />
+        /> */}
       </Head>
       <main className="overflow-hidden">
         <Header />
         <HeroSlider />
 
-        <section className="flex flex-col items-center justify-center bg-white py-[60px]">
+        <section className="flex flex-col items-center justify-center bg-white py-[60px] border-y border-[#ccc]">
           <FluidContainer>
             <div className="about-wrap flex flex-col items-center justify-center lg:px-[30px] lg:pb-[30px] 2xl:px-[70px] 2xl:pb-[40px] 4xl:px-[100px] 4xl:pb-[60px] ">
               <img
@@ -55,9 +53,9 @@ const Home: NextPage = () => {
                 className=" w-[20%] animate-grow-shrink rounded-full border-[5px] border-caribbeangreen xl:w-[30%] 2xl:w-[20%] 4xl:w-[10%]"
               />
               <div className=" mb-[18px] mt-6 flex flex-col items-center 3xl:mb-[25px]">
-                <Heading2 className="animate-fade-in-up text-center font-bold">
+                <h1 className="animate-fade-in-up text-center font-bold main_heading">
                   The Best Digital Marketing Company in UAE
-                </Heading2>
+                </h1>
                 <Heading2 className="animate-fade-in-up text-center font-bold text-caribbeangreen  ">
                   An Incredible Intersection of Creativity and Tech
                 </Heading2>
@@ -79,29 +77,24 @@ const Home: NextPage = () => {
                 top digital marketing companies in the UAE.
               </Paragraph>
             </div>
-            <div className="mt-6 flex flex-col items-center gap-10 md:flex-row">
+            <div className=" flex flex-col items-center gap-10 md:flex-row">
               <CollisionButton
                 variant="Dark"
                 onClick={() => setModalActive(true)}
               >
                 Let's Get Your Project Started
               </CollisionButton>
-              <CollisionButton
-                variant="Green"
-                onClick={() => setModalActive(true)}
-              >
-                Talk To Our Expert For Free
-              </CollisionButton>
+              
             </div>
           </FluidContainer>
         </section>
 
-        <section className="mx-auto flex flex-col items-center justify-center bg-white pb-[50px]">
+        <section className="mx-auto flex flex-col items-center justify-center bg-white ">
           <Container>
             <h2 className="pb-[15px] text-center text-[28px] font-bold lg:pb-[20px] 2xl:text-[28px] 2xl:leading-[34px] 3xl:text-[30px] 3xl:leading-[36px] 4xl:text-[34px] 4xl:leading-[38px] 5xl:text-[38px] 5xl:leading-[42px] 6xl:text-[42px] 6xl:leading-[48px] ">
               Ecommerce Inside Plans & Pricing
             </h2>
-            <h4 className="animate-fade-in-up text-center font-poppins text-[14px] font-normal leading-[20px] text-gray-500 md:text-[16px] md:leading-[22px] lg:text-[18px] lg:leading-[24px] xl:text-[22px] xl:leading-[28px] 2xl:text-[24px] 2xl:leading-[30px] 3xl:text-[26px] 3xl:leading-[32px] 4xl:text-[30px] 4xl:leading-[34px] 5xl:text-[34px] 5xl:leading-[38px] 6xl:text-[38px] 6xl:leading-[44px]">
+            <h4 className="animate-fade-in-up text-center font-poppins  leading-[20px] text-gray-500 sub_heading">
               Affordable Price Packages
             </h4>
           </Container>
@@ -112,16 +105,17 @@ const Home: NextPage = () => {
           <ProjectSlider />
         </section>
 
-        <section className=" flex flex-col items-center justify-center bg-white py-[30px] lg:py-[50px] 4xl:py-[82px] ">
+        <section className=" flex flex-col items-center justify-center bg-white  ">
           {/* <div className="px-[15px]">
             
           </div> */}
           <Container>
             <div className="mx-auto lg:w-[80%]">
-              <h2 className="pb-[5px] text-center text-[16px]  text-[#666] md:text-[20px] 2xl:text-[24px] ">
+              <h3 className="pb-[5px] text-center   text-[#666] sub_heading ">
                 Upscale and Leverage Brand Growth{" "}
-              </h2>
-              <h2 className="pb-[9px] text-center text-[22px] font-extrabold text-[#1b1037] lg:text-[30px] xl:text-[40px] ">
+              </h3>
+              <h2 className="pb-[9px] text-center  font-extrabold text-[#1b1037] sec_heading ">
+              {/* <h2 className="pb-[9px] text-center text-[22px] font-extrabold text-[#1b1037] lg:text-[30px] xl:text-[40px] "> */}
                 With the Digital Marketing Company in USA{" "}
               </h2>
               <p className="sxl:text-[18px] text-center text-[13px] text-[#666] lg:text-[14px] xl:text-[16px] 4xl:text-[20px]">
@@ -136,11 +130,9 @@ const Home: NextPage = () => {
             <div className="services-card-slider xl:hidden">
               <ServicesCardsSlider data={ServicesData} />
             </div>
-            </div>
+          </div>
 
-
-            <div className="hidden xl:grid  xl:grid-cols-2 2xl:grid-cols-3  4xl:grid-cols-4">
-
+          <div className="hidden xl:grid  xl:grid-cols-2 2xl:grid-cols-3  4xl:grid-cols-4">
             <div
               className={`flex h-[385px]  flex-col justify-center border bg-caribbeangreen  bg-center px-[15px] md:px-[50px]`}
             >
@@ -165,11 +157,9 @@ const Home: NextPage = () => {
               <ServicesCard service={service} key={index} />
             ))}
           </div>
-          
 
-          <Container>
-            <div className="my-[30px]  flex items-center justify-center">
-              <h3 className="mx-auto flex items-center justify-center font-extrabold  text-darkblue text-[18px] xl:text-[25px] 4xl:text-[37px]">
+            <div className=" container flex items-center justify-center py-[20px]">
+              <h3 className="mx-auto flex items-center justify-center text-[16px]  font-extrabold text-darkblue xl:text-[25px] 4xl:text-[28px]">
                 Hire{" "}
                 <img
                   src="/service-cta-icon.png"
@@ -179,11 +169,10 @@ const Home: NextPage = () => {
                 and Grow your Brand with your next Design/Development Project.
               </h3>
             </div>
-          </Container>
         </section>
 
         <section className=" bg-[url('/combo_bg.jpg')] bg-cover bg-center bg-no-repeat py-[100px]">
-          <div className="container relative mx-auto max-w-[540px] px-[15px]  lg:max-w-[540px] xl:max-w-[720px] 3xl:max-w-[1140px]">
+          <div className=" container relative mx-auto lg:w-[80%]">
             <div className="combo_offer_row flex flex-col-reverse lg:pr-[50%]">
               <div className="combo_image absolute right-[4%] top-[50%] hidden max-w-[50%] -translate-y-2/4 lg:block">
                 <img
@@ -193,14 +182,14 @@ const Home: NextPage = () => {
                 />
               </div>
               <div className="combo_offer_content">
-                <h3 className="mb-[30px] text-[30px] font-bold text-white xl:text-[50px] ">
+                <h3 className="mb-[15px] text-[30px] font-bold text-white xl:text-[45px] leading-[1.2]">
                   Business Setup
                   <br /> All-in-One Package
                 </h3>
-                <p className=" mb-[10px] uppercase text-caribbeangreen tracking-[0.5px] text-[16px] xl:text-[22px] ">
+                <p className=" mb-[10px] text-[16px] uppercase tracking-[0.5px] text-caribbeangreen xl:text-[22px] ">
                   WE UNDERSTAND WHAT’S BEST FOR YOUR BUSINESS
                 </p>
-                <p className="text-white mb-[15px] text-[16px] ">
+                <p className="mb-[15px] text-[16px] text-white ">
                   Ecommerce Inside offers branding solutions to expand your
                   reach and establish an online presence. Our combo packages fit
                   for companies that strive for success & cover everything you
@@ -210,47 +199,48 @@ const Home: NextPage = () => {
                   <div className="col-lg-6">
                     <ul className="mb-5 columns-1 text-white md:columns-2 md:text-[16px]">
                       <li className="mb-[10px]">
-                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        <span className="listTickColor before:mr-[10px] before:content-['\2714\0020']"></span>
                         Logo Design
                       </li>
                       <li className="mb-[10px]">
-                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        <span className="listTickColor before:mr-[10px] before:content-['\2714\0020']"></span>
                         Stationery Design
                       </li>
                       <li className="mb-[10px]">
-                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        <span className="listTickColor before:mr-[10px] before:content-['\2714\0020']"></span>
                         Website Design
                       </li>
                       <li className="mb-[10px]">
-                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        <span className="listTickColor before:mr-[10px] before:content-['\2714\0020']"></span>
                         Cup Design
                       </li>
                       <li className="mb-[10px]">
-                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        <span className="listTickColor before:mr-[10px] before:content-['\2714\0020']"></span>
                         Banner Design
                       </li>
                       <li className="mb-[10px]">
-                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        <span className="listTickColor before:mr-[10px] before:content-['\2714\0020']"></span>
                         Social Media Design
                       </li>
                       <li className="mb-[10px]">
-                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        <span className="listTickColor before:mr-[10px] before:content-['\2714\0020']"></span>
                         Brand Guide
                       </li>
                       <li className="mb-[10px]">
-                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        <span className="listTickColor before:mr-[10px] before:content-['\2714\0020']"></span>
                         T-shirt Design
                       </li>
                       <li className="mb-[10px]">
-                        <span className="listTickColor before:content-['\2714\0020'] before:mr-[10px]"></span>
+                        <span className="listTickColor before:mr-[10px] before:content-['\2714\0020']"></span>
                         Newsletter Design
                       </li>
                     </ul>
-                    <Button variant="Dark" onClick={() => setModalActive(true)}>
+                    <CollisionButton
+                      variant="Dark"
+                      onClick={() => setModalActive(true)}
+                    >
                       Let's Get started
-                    </Button>
-                    <CollisionButton variant="Dark" onClick={() => setModalActive(true)}>
-                      Let's Get started</CollisionButton>
+                    </CollisionButton>
                   </div>
                 </div>
               </div>

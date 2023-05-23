@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import TwinColSliderData from '~/data/TwinColSliderData';
-import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
-import { Alert } from "flowbite-react";
 import Button from '../ui/Button';
 
 const TwinColSlider = () => {

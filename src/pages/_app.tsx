@@ -19,7 +19,6 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <div className="Page-container mx-auto max-w-[1920px]">
             <Component {...pageProps} />
           </div>
-          <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
         </main>
       </QueryClientProvider>
     </SessionProvider>

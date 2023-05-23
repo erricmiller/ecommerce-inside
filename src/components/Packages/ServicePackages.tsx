@@ -1,61 +1,63 @@
-import React, { useEffect, useState } from 'react'
-import packageCatagories from '~/data/packageCatagories';
-import packages from '~/data/packages';
-import PackageCard from './PackageCard';
+import React, { useEffect, useState } from "react";
+import packageCatagories from "~/data/packageCatagories";
+import packages from "~/data/packages";
+import PackageCard from "./PackageCard";
 
 const ServicePackages = () => {
-    const [active, setActive] = useState("");
-    const [filterCards, setFilterCards] = useState(null);
+  const [active, setActive] = useState("");
+  const [filterCards, setFilterCards] = useState(null);
 
-    useEffect(() => {
-        setFilterCards(packages);
-    }, []);
+  useEffect(() => {
+    setFilterCards(packages);
+  }, []);
 
+  const handleClick = (e) => {
+    const btnValue = e.target.value;
+    setActive(btnValue);
+    const newFilterCards = packages.filter((item) => item.cat === btnValue);
+    console.log(newFilterCards);
+    if (btnValue === "All") {
+      setFilterCards(packages);
+    } else {
+      setFilterCards(newFilterCards);
+    }
+  };
 
-    const handleClick = (e) => {
-        const btnValue = e.target.value;
-        setActive(btnValue);
-        const newFilterCards = packages.filter((item) => item.cat === btnValue);
-        console.log(newFilterCards)
-        if (btnValue === "All") {
-            setFilterCards(packages);
-        } else {
-            setFilterCards(newFilterCards);
-        }
+  return (
+    <div className="wrapper lg:px-[30px] lg:pb-[30px] 2xl:px-[70px] 2xl:pb-[40px] 4xl:px-[100px] 4xl:pb-[60px] mx-auto">
+      {/* Categories Buttons */}
+      <div className="mb-[30px] flex flex-wrap  items-center  justify-center gap-[15px]">
+        {packageCatagories.map((item, id) => {
+          return (
+            <button
+              onClick={(e) => handleClick(e)}
+              key={id}
+              value={item.name}
+              className={`${
+                active === item.name
+                  ? " border-2 border-darkblue bg-caribbeangreen text-white"
+                  : "bg-white"
+              }  p-2" flex cursor-pointer items-center justify-center rounded-t-md border-2 border-caribbeangreen px-5  py-[8px]  hover:border-gray-300`}
+            >
+              {item.name}
+            </button>
+          );
+        })}
+      </div>
 
-    };
+      {/* Package Cards */}
+      <div className="container mx-auto">
 
-    return (
-        <div className="wrapper ">
-            {/* Categories Buttons */}
-            <div className="flex items-center justify-center  gap-[20px]  flex-wrap mb-[30px]">
-                {packageCatagories.map((item, id) => {
-                    return (
-                        <button
-                            onClick={e => handleClick(e)}
-                            key={id}
-                            value={item.name}
-                            className={`${active === item.name ? " text-white border-2 border-darkblue bg-caribbeangreen" : "bg-white"
-                                }  px-5 py-[8px] flex items-center justify-center border-2 border-caribbeangreen hover:border-gray-300 rounded-t-md  cursor-pointer  p-2"`}
-                        >
-                            {item.name}
-                        </button>
-                    );
-                })}
-            </div>
+      
+      <div className="grid  grid-cols-1  gap-5  2xl:grid-cols-3">
+        {filterCards &&
+          filterCards.map((data, id) => {
+            return <PackageCard info={data} key={id} />;
+          })}
+      </div>
+    </div>
+    </div>
+  );
+};
 
-
-            {/* Package Cards */}
-            <div className="grid  grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-[15px] px-[20px] md:px-[150px] lg:px-[20px] 2xl:px-[100px]">
-                {filterCards &&
-                    filterCards.map((data, id) => {
-                        return (
-                            <PackageCard info={data} />
-                        );
-                    })}
-            </div>
-        </div>
-    )
-}
-
-export default ServicePackages
+export default ServicePackages;

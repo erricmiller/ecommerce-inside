@@ -6,10 +6,10 @@ import Expertise from "~/components/Expertise";
 import Footer from "~/components/Footer";
 import GetStarted from "~/components/GetStarted";
 import Header from "~/components/Header/Header";
+import InfoSec from "~/components/InfoSec";
 import MyModal from "~/components/MyModal";
 import ServicesContact from "~/components/ServicesContact";
 import Testimonials from "~/components/Testimonials";
-import InfoSec from "~/components/infoSec";
 import Button from "~/components/ui/Button";
 import servicesqualityData from "~/data/servicesqualityData";
 import useRQGlobalState from "~/utils/useRQGlobalState";
@@ -82,8 +82,8 @@ const services = () => {
           </div>
 
           <div className="services-wrapper grid grid-cols-1 place-content-center py-[40px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {servicesqualityData.map((service) => (
-              <div className="service-box group mb-[55px] px-[15px]">
+            {servicesqualityData.map((service,index) => (
+              <div className="service-box group mb-[55px] px-[15px]" key={index}>
                 <Link href={service.link}>
                   <img
                     src={service.img}
@@ -100,8 +100,8 @@ const services = () => {
                   </h3>
                 </Link>
                 <ul className="servicebox-list list-none">
-                  {service.points.map((point) => (
-                    <li className="point relative  ml-[25px] pl-[5px] text-[13px] font-semibold leading-[26px] text-[#666] before:absolute before:-left-[20px] before:top-[25%] before:h-[10px] before:w-[10px] before:rounded-full before:bg-[#e76239] ">
+                  {service.points.map((point,index) => (
+                    <li className="point relative  ml-[25px] pl-[5px] text-[13px] font-semibold leading-[26px] text-[#666] before:absolute before:-left-[20px] before:top-[25%] before:h-[10px] before:w-[10px] before:rounded-full before:bg-[#e76239] " key={index}>
                       {point}
                     </li>
                   ))}

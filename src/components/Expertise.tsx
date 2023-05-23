@@ -9,7 +9,7 @@ import CollisionButton from "./ui/CollisionButton";
 const Expertise = () => {
   const [modalActive,setModalActive] = useRQGlobalState('modal',false);
   return (
-    <section className="pb-[100px]">
+    <section className="pb-[30px]">
       <div className="container mx-auto">
         <div className="development-box">
           <ul className="mx-auto flex list-none items-center justify-center py-[35px] text-center">
@@ -44,7 +44,7 @@ const Expertise = () => {
       </div>
       <div className="container-fluid mx-auto px-[20px] lg:px-[60px] ">
 
-        <div className="row -mx-[15px] flex flex-col flex-wrap items-center justify-center py-[37px] lg:flex-row lg:pb-[80px]">
+        <div className="row -mx-[15px] flex flex-col flex-wrap items-center justify-center py-[37px] lg:flex-row ">
           
           <div className="technology-icon-wrap lg:max-w-[41.66%]">
             <ul className="technology-leaf-list flex list-none flex-wrap items-center justify-center">
@@ -80,10 +80,9 @@ const Expertise = () => {
           </div>
         </div>
       </div>
-      <div className="about-btn flex flex-col md:flex-row items-center justify-center gap-8">
+      {/* <div className="about-btn flex flex-col md:flex-row items-center justify-center gap-8">
         <CollisionButton variant="Dark" onClick={()=>setModalActive(true)}>Let's Get Started</CollisionButton>
-        <CollisionButton variant="Green">Consult An Expert</CollisionButton>
-      </div>
+      </div> */}
     </section>
   );
 };

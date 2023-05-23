@@ -42,11 +42,11 @@ const NavBar: FC = () => {
       <NavigationMenu.List className="hidden 2xl:flex  center flex-row gap-5 list-none h-[80px] items-center">
 
         {
-          navlinks?.map((navlink) => (
-            <>
+          navlinks?.map((navlink,index) => (
+            <div key={index}>
               {
                 navlink.sublinks ? (
-                  <NavigationMenu.Item className='hover:text-caribbeangreen flex  items-center h-full' key={navlink.name}>
+                  <NavigationMenu.Item className='hover:text-caribbeangreen flex  items-center h-full' >
                     <NavigationMenu.Trigger className="h-full group flex select-none items-center   leading-none outline-none">
                       <Link href={navlink.link}>
                         {navlink.name}
@@ -82,7 +82,7 @@ const NavBar: FC = () => {
                   </NavigationMenu.Item>
                 )
               }
-            </>
+            </div>
           ))
         }
       </NavigationMenu.List>

@@ -48,10 +48,10 @@ const ServicesCardsSlider: FC = ({ data }) => {
         </div>
       </SwiperSlide>
       {data.map((service, index) => (
-        <SwiperSlide>
+        <SwiperSlide key={index}>
           <div
             className={`group relative flex h-[385px] flex-col justify-center border bg-[url('/service-img-2.webp')]  bg-cover bg-center bg-no-repeat px-[15px] md:px-[50px]`}
-            style={{ backgroundImage: `url(${service.img})` }}
+            style={{ backgroundImage: `url(${service.img})` }} key={index}
           >
             <div className=" flex flex-col group-hover:hidden">
               <img
@@ -64,7 +64,7 @@ const ServicesCardsSlider: FC = ({ data }) => {
               </h3>
               <ul className="flex list-none flex-wrap">
                 {service.cat.map((catagory) => (
-                  <li className="border-l border-gray-400 px-[12px] text-xs uppercase text-gray-400 first:border-l-0 first:pl-0">
+                  <li className="border-l border-gray-400 px-[12px] text-xs uppercase text-gray-400 first:border-l-0 first:pl-0" key={catagory}>
                     {catagory}
                   </li>
                 ))}
@@ -78,7 +78,7 @@ const ServicesCardsSlider: FC = ({ data }) => {
               </h5>
               <ul className="flex list-none flex-wrap">
                 {service.cat.map((catagory) => (
-                  <li className="border-l border-gray-400 px-[12px] text-xs uppercase text-gray-400 first:border-l-0 first:pl-0">
+                  <li className="border-l border-gray-400 px-[12px] text-xs uppercase text-gray-400 first:border-l-0 first:pl-0" key={catagory}>
                     {catagory}
                   </li>
                 ))}
